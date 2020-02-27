@@ -1,0 +1,70 @@
+Señales de reloj y Flip flops sincronizados por reloj
+
+Los sistemas digitales pueden operar de forma asíncrona o
+síncrona.
+
+En los sistemas asíncronos, las salidas de los circuitos
+lógicos pueden cambiar de estado en cualquier momento en
+que varíen una o más de las entradas. En un sistema
+asíncrono por lo general es más difícil diseñar y detectar las
+fallas que en un sistema síncrono.
+
+En los sistemas síncronos, los tiempos exactos en que
+cualquier salida puede cambiar de estado se determinan
+mediante una señal comúnmente llamada reloj (CLK). Esta
+señal de reloj por lo general es un tren de pulsos
+rectangulares o una onda cuadrada. La señal de reloj se
+distribuye a todas las partes del sistema y la mayoría de las
+salidas (si no es que todas) pueden cambiar de estado sólo
+cuando el reloj hace una transición. Las transiciones (también
+llamadas bordes). Cuando cambia de un 0 a un 1 se le llama
+transición con pendiente positiva (TPP); cuando el reloj
+cambia de un 1 a 0, a esto se le llama transición con
+pendiente negativa (TPN). En estos apuntes se usarán las
+abreviaciones TPP y TPN, puesto que estos términos aparecen
+con mucha frecuencia en todos los apuntes.
+
+La mayoría de los sistemas digitales son principalmente
+síncronos (aunque siempre hay algunas partes asíncronas),
+ya que en los circuitos síncronos es más fácil diseñar y
+detectar sus fallas. Es más fácil localizar sus fallas por que las
+salidas del circuito pueden cambiar sólo en instantes
+específicos. En otras palabras, casi todas las partes se
+sincronizan a las transiciones de las señales de reloj.
+
+Flip flops sincronizados por reloj
+
+Se usan varios tipos de FFs sincronizados por reloj en una
+amplia gama de aplicaciones. Antes de iniciar el estudio de los
+diversos FFs sincronizados por reloj describiremos las ideas
+principales que son comunes a todos ellos.
+
+Entrada de reloj
+Entradas de control
+Se puede decir que las entradas de control hacen que la
+salida del FF esté lista para cambiar, en tanto que la
+transición activa en la entrada CLK en realidad dispara el
+cambio. Las entradas de control controlan el CUAL (el estado
+al que pasará la salida); la entrada CLK determina el
+CUANDO.
+
+Tiempos de establecimiento y retención.
+
+Se deben cumplir dos requisitos de sincronización para que un
+FF sincronizado por reloj responda confiablemente a sus
+entradas de control cuando ocurre la transición CLK activa.
+Dichos requisitos se ilustran en las siguientes imágenes para
+un FF que dispara en TPP.
+ts (tiempo de establecimiento): es el intervalo que procede
+inmediatamente a la transición activa de la señal CLK,
+durante la cual la entrada de control se debe mantener en el
+nivel adecuado.
+
+
+
+
+tH (tiempo de retención): es el intervalo de tiempo que
+sigue inmediatamente a la transmisión activa de la señal CLK,
+durante la cual la entrada de control síncrona se debe
+mantener en el nivel adecuado.
+

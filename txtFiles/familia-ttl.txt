@@ -1,0 +1,180 @@
+Familia TTL
+              NAND TTL
+¿Donde esta el arreglo tótem?
+
+
+
+
+¿Para qué se emplea, la configuración
+tipo tótem?
+La misma lógica se podría llevar a cabo eliminando Q1 y D1 y
+conectando la base de R1 al colector de Q2. Pero esto
+significaría que Q4 conduciría una corriente muy pesada en
+su estado de saturación (5V/130 ohms  40 [mA]) (recuerden que en
+el estado de saturación se tiene la corriente máxima en el
+colector y en el estado de corte se tiene la mínima corriente y
+el máximo voltaje en Vce). Con Q1 en el circuito no habrá
+corriente a través de R1 en el estado BAJO de salida. Esto es
+importante porque mantiene baja la disipación de
+potencia del circuito. Al comprobar con el multimetro la
+corriente verdaderamente es nula.
+
+Otra ventaja de esta configuración ocurre en el estado de
+salida de ALTO. En este caso Q1 está actuando como un
+seguidor emisor con su baja impedancia de salida
+asociada (comúnmente 10 ohms). Esta baja impedancia de
+salida proporciona un tiempo breve constante para cargar
+cualquier carga capacitiva en la salida. Esta acción
+(comúnmente llamada activa descendente) proporciona
+formas de onda con un tiempo de subida muy rápido en las
+salidas TTL.
+
+Una desventaja de la configuración de salida de tipo tótem
+ocurre   durante    la   transición  de    BAJO    a   ALTO.
+Desafortunadamente, Q2 se apaga mas lentamente que el
+encendido de Q3, y por lo tanto existe un periodo de algunos
+nanosegundos durante el cual ambos transistores son
+conductores y se consume una corriente relativamente grande
+(de 30 a 40 [mA]) de la fuente de 5 [V]. Esto puede presentar
+problemas que analizaremos más adelante.
+
+Salidas de colector abierto-drenador
+abierto
+
+Hay situaciones en las que varios dispositivos digitales deben
+compartir el uso de un solo alambre para transmitir una señal
+hacia algún dispositivo de destino, un símil sería varios
+vecinos que comparten la misma calle. Lo anterior significa
+que varios dispositivos deben tener sus salidas conectadas al
+mismo alambre, el cual esencialmente los conecta uno al otro.
+Para todos los dispositivos lógicos que hemos considerado
+hasta este punto, lo antes mencionado representa un
+problema. Cada salida tiene dos estados: ALTO y BAJO.
+Cuando una salida es ALTA mientras la otra es BAJA, y
+cuando están conectadas juntas, se tiene un conflicto ALTO-
+BAJO. ¿cuál ganará? Al igual que en un juego de manos, gana
+la más fuerte. En este caso, el circuito cuyo transistor de
+salida tiene la resistencia "ENCENDIDA" menor jalará el
+voltaje de salida en su dirección. En la siguiente figura se
+presenta en diagrama de bloques genérico con sus salidas
+conectadas a un alambre común.
+
+Si los dispositivos lógicos fueran CMOS, entonces la
+resistencia ENCENDIDA del circuito ascendente que da la
+salida a ALTO sería aproximadamente la misma que la
+resistencia ENCENDIDA del circuito descendente       que da
+salida a BAJO. El voltaje en el alambre común será
+aproximadamente de la mitad del voltaje de alimentación.
+Este voltaje esta en el rango indeterminado para la mayoría
+de las series CMOS y es inaceptable para excitar una entrada
+CMOS. Además la corriente a través de los dos MOSFET's
+conductores será mucho mayor que la normal, especialmente
+en valores altos de VDD, y puede dañar a los CI's.
+
+Las salidas CMOS convencionales nunca se deben conectar
+juntas
+
+Si los dispositivos fueran TTL con configuración tipo tótem,
+como se muestra en la siguiente figura:
+Ocurriría una situación similar pero con resultados diferentes
+debido a la diferencia en la circuitería de salida.
+
+Suponga que la salida de la compuerta A esta en el estado
+ALTO (Q1A ENCENDIDA, Q2A APAGADA) y la salida de la
+compuerta B en el estado BAJO (Q3B APAGADA, Q4B
+ENCENDIDA).
+En esta situación Q4B es una carga de resistencia muy baja
+en Q1A y vaciar o desaguar una corriente que será mucho
+mayor de la que se requiere. Esta corriente podría no dañar
+Q1A o Q4B inmediatamente, sino que con el paso del tiempo
+podría causar sobrecalentamiento y deterioro del desempeño,
+así como la falla final del dispositivo.
+
+Otro problema que causa esta corriente relativamente alta
+que fluye a través del Q4B es que producirá una mayor caída
+de voltaje a través del emisor colector del transistor,
+causando VOL de entre 0.5 y 1.0 [V], lo cual es mayor que V OL
+máximo permisible. Por estas razones:
+Las salidas TTL con configuración tipo poste (totem) nunca
+deben de conectar juntas.
+
+Salidas de colector abierto-drenador abierto
+
+Una solución al problema de compartir un alambre común
+entre compuertas, es remover el transistor activo ascendente
+de cada circuito de salida de compuerta. De esta manera,
+ninguna de las compuertas tratará de mantener un ALTO
+lógico. Los circuitos de salida CMOS que se hayan modificado
+de esta manera llaman se llaman salidas de drenador abierto.
+La salida se toma en el drenador MOSFET de canal N
+descendente, lo que es un circuito abierto (es decir, no esta
+conectada a ningún otro circuito).
+
+El equivalente TTL se llama salida de colector abierto, por que
+el colector del transistor inferior en el poste esta directamente
+conectado al pin de salida y a ningún otro punto, como se
+muestra en la siguiente figura:
+
+
+
+
+La estructura de colector abierto elimina los transistores
+ascendentes. En el estado bajo de salida, Q2 esta encendida
+(tiene corriente base y esencialmente es un corto circuito
+entre el colector y el emisor; en el estado ALTO de salida, Q2
+esta apagada (no tiene corriente base y esencialmente es un
+circuito abierto entre el colector y el emisor.) Como este
+circuito no tiene forma interna para jalar la salida a ALTO, el
+diseñador de circuitos debe conectar una resistencia
+ascendente externa Rp a la salida, como se muestra en la
+siguiente figura:
+
+
+
+
+cuando Q2 esta ENCENDIDA, jala el voltaje de salida hasta un
+BAJO. Cuando Q2 esta APAGADA Rp jala la salida de la
+compuerta a ALTO. Note que sin la resistencia ascendente, el
+voltaje de salida sería indeterminado (flotante). El valor de la
+resistencia Rp normalmente se elige de 10 [kohms]. Este
+valor es lo suficientemente pequeño como para que en el
+estado ALTO la caída de voltaje se deba a una corriente de
+carga que no disminuirá el voltaje de salida por abajo del
+mínimo VOH. Es suficiente mente grande de modo que en el
+estado BAJO limitará la corriente a través de q2 a un valor
+por debajo de IOL(máx).
+
+Cuando varias compuertas de colector abierto o drenador
+abierto comparten una conexión común. Como se muestra en
+la siguiente figura:
+
+El alambre común es ALTO, a falta de una alternativa debido
+a la resistencia ascendente. Cuando una (o más) de las
+salidas de la compuerta lo jalan a BAJO, los 5 [V] disminuyen
+a través de Rp, y la conexión común esta en el estado BAJO.
+Debido a que la salida común es ALTA solo cuando todas las
+salidas están en estado ALTO, conectando las salidas de esta
+manera esencialmente se implementa la función lógica AND.
+A esto se le llama conexión AND-Alambrada. Esto se muestra
+de forma simbólica mediante el símbolo de línea punteada de
+la compuerta AND. Alli no existe una compuerta AND real.
+Una conexión AND alambrada se puede implementar solo con
+dispositivos lógicos TTL de colector abierto y CMOS de
+drenador abierto.
+
+Para resumir, los circuitos colector abierto-drenador no
+pueden hacer de manera activa sus salidas ALTA, solo las
+pueden jalar a BAJO. Esta característica se puede usar para
+permitir que varios dispositivos compartan el mismo alambre
+con el fin de transmitir un nivel lógico a otro dispositivo, o
+para combinar las salidas de los dispositivos       de forma
+efectiva en una función lógica AND. Como se mencionó antes,
+el propósito de la resistencia ascendente activa en el circuito
+de salida de compuertas convencionales es cargar la
+capacitancia de carga rápidamente y permitir la conmutación
+rápida. Los dispositivos de colector abierto-drenador abierto
+tienen una velocidad de conmutación mucho más lenta de
+BAJO a ALTO, y en consecuencia no se usan en aplicaciones
+de alta velocidad.
+INVERSOR
+

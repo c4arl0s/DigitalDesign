@@ -1,0 +1,65 @@
+Adquisición de datos
+
+Existen muchas aplicaciones en las que los datos analógicos
+se deben digitalizar y transferir a la memoria de una
+computadora. Al proceso mediante el cual la computadora
+adquiere estos datos analógicos digitalizados se le denomina
+adquisición de datos. A la adquisición del valor de un solo
+punto de datos se le llama muestreo de la señal analógica y
+a ese punto de datos a menudo se le nombra muestreo. La
+computadora puede hacer varias cosas diferentes con los
+datos, dependiendo de la aplicación. En una aplicación de
+almacenamiento, como por ejemplo:
+
+   una grabación digital de audio
+   una grabación de video
+   un osciloscopio digital
+
+La microcomputadora interna guarda los datos y tiempo
+después los transfiere a un DAC para reproducir la señal
+analógica original. En una aplicación de control de proceso, la
+computadora puede examinar los datos o realizar cálculos con
+ellos para determinar las salidas de control que debe generar.
+
+En     la   siguiente    figura    se  muestra     como    una
+microcomputadora se conecta a un ADC de rampa digital con
+el fin de adquirir los datos. La computadora genera los pulsos
+de INICIO que comienzan cada nueva conversión A/D. la
+señal ¯FDC (Fin De Conversión) del ADC se alimenta a la
+computadora. La computadora "monitorea" ¯FDC para
+averiguar cuando el ADC completa la conversión actual y
+luego transfiere los datos digitales de la salida del ADC a su
+memoria.
+
+ALIAS
+
+La meta obvia en la reconstrucción de la señal es hacerla casi
+idéntica a la señal analógica original. Con el fin de evitar
+pérdida de información, como lo ha demostrado un
+investigador llamado Nyquist, la señal de entrada se debe
+muestrear a una frecuencia dos veces mayor que el
+componente de frecuencias más alta en la señal de
+entrada.
+
+  Por ejemplo, si se esta completamente seguro de que la
+frecuencia mayor en un sistema de audio será menor que 10
+[kHz], la señal de audio se debe muestrear a 20,000
+muestreos en cada segundo para reconstruir la señal.
+
+La frecuencia a la cual se toman los muestreos se denomina
+frecuencia de muestreo, Fs. ¿Qué pasaría si por alguna
+razón se presenta un tono de 12[Khz.] en la señal de
+entrada? Por desgracia, ¡el sistema no lo ignoraría
+simplemente porque        es demasiado alto! Más bien, se
+produciría un fenómeno llamado alias. Un alias de la señal
+ocurriría al muestrear la señal a una frecuencia menor que la
+frecuencia mínima identificada, según Nyquist (el doble de la
+frecuencia mayor de la señal de entrada). En este caso
+cualquier señal mayor que 10 [kHz] producirá una frecuencia
+alias. La frecuencia alias siempre es la diferencia entre
+cualquier múltiplo entero de la frecuencia de muestreo Fs
+(20kHz) y de la frecuencia de entrada que se esta
+digitalizando (12kHz). En vez de oír un tono de 12 kHz en la
+señal reconstruida, se escucharía un tono de 8 kHz que no
+estaba en la señal original.
+

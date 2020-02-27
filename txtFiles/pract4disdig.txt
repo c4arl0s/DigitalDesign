@@ -1,0 +1,56 @@
+             UNIVERSIDAD NACIONAL
+              AUTÓNOMA DE MÉXICO
+
+
+               FACULTAD DE INGENIERIA
+
+
+Trabajo:     Practica 4 Mapas de karnaugh
+
+EQUIPO:
+                  SANTIAGO CRUZ CARLOS
+                  VIRGINIA
+
+
+ASIGNATURA: Lab. Diseño Digital
+
+GRUPO:____
+UNAM, Facultad de ingenieria                                  11 de octubre de 2005
+Autor: Santiago Cruz Carlos                                Titulo:
+________________________________________________________________________________
+__________
+                    11 de octubre de 2005 , Ciudad Universitaria, Mèxico
+Objetivo: aplicar las tecnicas de minimización, mapas de karnaugh, para obtener la
+expresión òptima en la soluciòn de un problema especifico
+I. Dada la siguiente expresión: F  W , X ,Y ,Z (0,1,2,3,4,6,7,9,13,15) +
+    1) Genera una tabla de verdad correspondiente a esa forma canonica.
+    2) Enuncie el teorema del álgebra de conmutación que se generaliza para fundamentar el
+       procedimiento de construcción de los mapas y su mecanica para la reduccion de
+       terminos.
+    3) Explique como se genera la expresión grafica de una tabla logica mediante un mapa
+       de karnaugh. Ejemplifique esto para funcion de 5 variables, coloque en cada celda el
+       correspondiente numero de minterminos. Y construya el mapa para la funcion F con
+       los datos de su tabla de verdad.
+    4) Explique como se deben agrupar los terminos 1 contenidos en el mapa para definir
+       conjuntos rectangulares de unos. Marque en el mapa de la función F los conjuntos
+       rectangulares., justifique cada agrupación el mapa.
+    5) Enuncie y explique el teorema del implicante primo. E identifiquemos para cada mapa
+       de F.
+    6) Defina que son una celda 1 distinguida, un implicante primo esencial y un implicante
+       primo esencial secundario; el por que de su entidad al hacer reducciones en un mapa.
+       Y comience a generar la funcion reducida de F, detalle como obtiene cada uno de los
+       tèrminos de esa funcion
+II. sean X=x1x0 y Y=y1y0 dos numeros de 2 bits. El objetivo es comparar estos numeros y
+determinar sus magnitudes relativas. Definiendo las salidas de la siguiente forma:
+
+G=(x>y)
+E=(x=y)
+L=(x<y)
+Diseñe e implemente un circuito combinacional utilizando mapas de karnaugh que muestre
+estas tres salidas.
+
+
+
+
+                                     2 de 2
+

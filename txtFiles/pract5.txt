@@ -1,0 +1,81 @@
+          UNIVERSIDAD NACIONAL
+           AUTÓNOMA DE MÉXICO
+
+
+              FACULTAD DE INGENIERIA
+
+
+Trabajo: PRACTICA 5
+
+EQUIPO:
+                SANTIAGO CRUZ CARLOS
+
+
+ASIGNATURA:
+
+GRUPO:
+UNAM, Facultad de Ingeniería                                       21/10/2017 23:07:59
+Autor: Santiago Cruz Carlos                                Titulo:
+________________________________________________________________________________
+__________
+           sábado, 21 de octubre de 2017, Ciudad Universitaria, México, DF
+
+
+
+
+                                          2
+UNAM, Facultad de Ingeniería                                       21/10/2017 23:07:59
+Autor: Santiago Cruz Carlos                                Titulo:
+________________________________________________________________________________
+__________
+
+        BIESTABLES INTEGRADOS (FLIP-FLOPS) Y CONTADORES SINCRONOS
+
+Objetivo: conocer las características de los FLIP-FLOP's y de los contadores
+integrados.
+
+Flip-flops.
+   1. Conecte la polarización y tierra del circuito integrado. Compruebe la siguiente
+       tabla de verdad (conecte un diodo emisor de luz a la salida Q).
+
+CLEAR RELOJ                   J            K                SALIDAS
+                                                            Qo      Qo_
+Alto    bajo-alto-bajo       bajo        bajo               Qo      Qo_
+Alto    bajo-alto-bajo       alto        bajo               alto    bajo
+Alto    bajo-alto-bajo       bajo        alto               bajo    alto
+Alto    bajo-alto-bajo       alto        alto               Qo_     Qo
+
+Qo significa el estado anterior de Q
+
+  2. Conecte la señal de una onda cuadrada de 0 a 5 volts y frecuencia 1 KHz a la
+     entrada RELOJ del Flip-flop. Conecte un 1 logico a la entrada J y K del Flip-
+     flop.
+
+
+
+
+Conecte el osciloscopio las señales reloj y Q. ¿Qué relación hay entre ellas? Copie las
+formas de onda observadas.
+
+                                           3
+UNAM, Facultad de Ingeniería                                       21/10/2017 23:07:59
+Autor: Santiago Cruz Carlos                                Titulo:
+________________________________________________________________________________
+__________
+Observe en el osciloscopio las señales de reloj y Q ¿Qué relación hay entre ellas?
+Copie las formas de onda observadas.
+Aumente la frecuencia de la onda cuadrada, observe los efectos, explíquelos y anote
+el dato de frecuencias.
+
+  3. Conecte los flip-flops del circuito integrado para tener ahora un divisor de
+     frecuencia entre 4.
+
+Copie las formas de ondas observadas, para una frecuencia de reloj de 1 [kHz].
+Aumente la frecuencia hasta que se observe la distorsión. ¿Dónde es mayor la
+distorsión, en la salida del divisor entre 2 o la salida del divisor entre 4?
+
+
+
+
+                                          4
+

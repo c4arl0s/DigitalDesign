@@ -1,0 +1,28 @@
+LATCH D
+
+En el FF disparado por el borde se usa un circuito detector
+de borde para asegurar que la salida responderá a la entrada
+D sólo cuando ocurra la transición activa de reloj. Si este
+detector de borde no se usa, el circuito resultante operará de
+forma un poco diferente. Este circuito se llama latch D y
+tiene la configuración siguiente.
+
+
+
+
+Circuito detector de bordes.
+
+
+
+
+[Próximamente las formas de ondas]
+
+
+
+        240    250   260    270   280   290    300   310   320
+ D
+
+ CP
+
+ Q
+

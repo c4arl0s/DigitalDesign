@@ -1,0 +1,178 @@
+1. Interfaz con el mundo analógico
+
+Una cantidad digital tendrá un valor que se especifica como
+una de dos posibilidades: 1 o 0. BAJO o ALTO, cierto o falso,
+etc. En la practica, una cantidad digital, como podría ser un
+voltaje, en realidad puede tener un valor que se encuentra en
+cualquier punto entre intervalos específicos y definimos
+valores dentro de un rango determinado para obtener el
+mismo valor digital. Por ejemplo para la lógica TTL sabemos
+que:
+
+0 [V] a 0.8 [V] = 0 lógico
+2 [V] a 5 [V] = 1 lógico
+
+a cualquier voltaje por debajo del rango 0 a 0.8 [V] se le da el
+valor digital de `0' y a cualquier voltaje en el intervalo de 2 a
+5 [V] se le asigna el valor digital de `1'. Los valores exactos
+de voltaje no son significativos, por que los circuitos
+responden de la misma manera a todos los valores de voltaje
+dentro de un rango determinado.
+
+En contraste un cantidad analógica puede adoptar cualquier
+valor sobre intervalo continuo de valores, y lo que es mas
+importante, su valor exacto es significativo.
+
+Cuando un sistema digital, por ejemplo una computadora, se
+emplea para observar o controlar un proceso físico, debemos
+establecer la diferencia entre la naturaleza digital de la
+computadora y la naturaleza analógica de las variables de
+proceso.
+
+Elementos    que intervienen cuando una computadora
+monitorea    y controla una variable física que se supone
+analógica.
+
+Transductor. Es un dispositivo que convierte la variable
+física en una variable eléctrica.
+Convertido analógico digital. La salida analógica eléctrica
+del transductor sirve como entrada analógica para el ADC. El
+ADC convierte esta entrada analógica en una salida digital.
+Computadora. Procesa las señales de entrada y decide que
+hacer en las situaciones planteadas.
+Convertidor DAC. Esta salida digital de la computadora se
+conecta a un DAC, que lo convierte en un voltaje o corriente
+analógica proporcional.
+Actuador. La señal analógica del DAC con frecuencia se
+conecta a algún dispositivo o circuito que sirve como actuador
+para controlar la variable física. Para nuestro ejemplo de la
+temperatura del agua, el actuador podría ser una válvula
+controlada eléctricamente      que regule el flujo del agua
+caliente hacia el tanque, de acuerdo con el voltaje analógico
+del DAC. La velocidad del flujo variará en proporción a ese
+voltaje analógico, con 0[V] sin producir ningún flujo y 10 [V]
+produciendo el flujo máximo.
+
+2. Conversión de digital a analógica.
+
+Básicamente, la conversión A/D es un proceso de tomar un
+valor representado en código digital (como binario directo o
+en BCD) y convertirlo en un voltaje o corriente que sea
+proporcional al valor digital. En la siguiente figura se muestra
+el símbolo de un convertidor D/A común de cuatro bits:
+El enfoque sobre la circuitería interna lo veremos más
+adelante; por el momento examinaremos las diferentes
+relaciones de entrada-salida.
+
+Note que hay una entrada para el voltaje de referencia, V ref.
+Esta entrada se usa para determinar la salida a plena escala,
+o valor maximo que el convertidor puede producir. Las
+entradas digitales, por lo general se derivan del registro de
+salida de un sistema digital. Los 2 4=16 números binarios
+distintos representados mediante estos cuatro bits se enlistan
+en la siguiente figura:
+   D         C        B       A            Vsal
+   0        0        0        0              0
+   0        0        0        1              1
+   0        0        1        0              2
+   0        0        1        1              3
+   0        1        0        0              4
+   0        1        0        1              5
+   0        1        1        0              6
+   0        1        1        1              7
+                                                     Volts
+   1        0        0        0              8
+   1        0        0        1              9
+   1        0        1        0             10
+   1        0        1        1             11
+   1        1        0        0             12
+   1        1        0        1             13
+   1        1        1        0             14
+   1        1        1        1             15
+
+
+Para cada valor digital le corresponde un valor analógico. De
+hecho, para este caso, el voltaje de salida analógico Vsal es
+igual en volts al número binario. También podría haber sido el
+doble del número binario o algún otro factor de
+proporcionalidad. La misma idea seria válida si la salida del
+D/A fuera una corriente Isal.
+En general: salida analogica=K x entrada digital
+
+Salida analógica
+
+La salida de un DAC no es una cantidad analógica por que
+solo puede adoptar valores específicos como los 16 niveles de
+voltaje posibles para Vsal, siempre que Vref sea constante. En
+tal sentido es en realidad digital. Sin embargo, como
+veremos, el número posible de valores distintos de salida se
+puede incrementar y la diferencia entre valores sucesivos
+puede disminuir al aumentar el número de bits de entrada.
+Esto nos permitirá una salida que sea más y más como una
+cantidad analógica que varíe continuamente en un rango de
+valores. En otras palabras, la salida del DAC es una cantidad
+"seudoanalógica". Seguramente refiriéndose a ésta como
+analógica ya que es una aproximación a una cantidad
+analógica.
+
+Factores de ponderación de las entradas
+
+Para el DAC de la figura pasada se debe observar que cada
+entrada digital aporta una cantidad diferente a la salida
+analógica. Esto se puede apreciar fácilmente si examinamos
+los casos donde solo una entrada es ALTA (tabla). Las
+contribuciones de cada entrada se ponderan de acuerdo con
+su posición en el número binario. Así, A, que es el LSB, tiene
+un factor de ponderación de 1 [V]; B tiene un factor de
+ponderación de 2 [V]; C tiene un factor de ponderación de 4
+[V]; y D, el MSB, tiene el factor de ponderación mayor, 8 [V].
+Los factores de ponderación se incrementan al doble de
+manera sucesiva para cada bit, iniciando con el LSB. De tal
+manera, podemos considerar Vsal para la entrada digital 0111,
+podemos sumar las ponderaciones de los bits C, B y A con el
+fin de obtener 4 [V] + 2 [V] + 1 [V]= 7 [V].
+D           C        B         A                    Vsal [V]
+0           0        0         1                    1
+0           0        1         0                    2
+0           1        0         0                    4
+1           0        0         0                    8
+
+EJEMPLO: un convertidor D/A de cinco bits produce
+Vsal=0.2 [V] para una entrada digital de 00001.
+Determine el valor de Vsal para una entrada de 11111
+
+Solución:
+Es obvio que 0.2 [V] es el factor de ponderación del LSB. Así
+los factores de ponderación para los otros bits deben ser 0.4
+[V], 0.8 [V], 1.6 [V], 3.2 [V], respectivamente. Entonces para
+una entrada digital de 11111, (qué es el MSB), el valor de
+Vsal será 3.2 + 1.6 + 0.8 + 0.4 + 0.2= 6.2 [V] (muy curioso)
+
+E       D        C         B        A                 Vsal [V]
+0       0        0         0        1                 0.2
+0       0        0         1        0                 0.4
+0       0        1         0        0                 0.8
+0       1        0         0        0                 1.6
+1       0        0         0        0                 3.2
+
+25= 32 combinaciones
+
+Resolución tamaño de escalón
+
+La resolución de un convertidor D/A se define como el cambio
+menor que puede producir en la salida analógica como un
+resultado en la entrada digital. En el primer ejemplo podemos
+observar que la resolución es de 1 [V]
+
+La resolución siempre es igual al factor de ponderación del
+LSB y también se le denomina tamaño del escalón.
+En general, para un DAC de N bits el número de niveles
+distintos será 2N y el número de escalones será 2N-1.
+
+Salida analógica = K x (entrada digital)
+
+Resolución = K = (Afs)/( 2N-1)
+
+Afs: salida analógica a plena escala.
+n: es el número de bits.
+

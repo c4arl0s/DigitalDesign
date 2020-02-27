@@ -1,0 +1,310 @@
+            UNIVERSIDAD NACIONAL
+            AUTONOMA DE MÉXICO
+
+
+
+
+     LABORATORIO DE DISEÑO DIGITAL
+        GPO. 12 Horario 9:30 a 11:30
+
+
+
+
+        REPORTE DE LA PRACTICA No. 6
+
+    DISPOSITIVOS DE LÓGICA SECUENCIAL
+
+
+
+
+Brigada 10: Integrante 1 Hernández Labra Virginia
+            Integrante 2 Santiago Cruz Carlos
+
+
+      Fecha de realización de la práctica: 11/Nov/05
+                    Fecha de entrega del reporte: 18/ Nov /05
+                    Práctica 6. Dispositivos de Lógica Secuencial
+
+OBJETIVO: Que el alumno se familiarice con dispositivos secuenciales en su
+          funcionamiento sincrono y asíncrono para entender sus características y
+          técnicas de diseño, en su forma discreta de implementación.
+
+1) Investigar los diferentes tipos de flip-flops que existen y hacer una breve
+   descripción de sus características de funcionamiento.
+
+
+
+
+                        F      W , X ,Y , Z
+                                              (0,1,2,3,4,6,7,9,13,15)
+   a) Genere la tabla de verdad que corresponde a esta forma canónica.
+
+                     Mintérmino       W          X     Y    Z     F
+                         mo           0          0     0    0     1
+                         m1           0          0     0    1     1
+                         m2           0          0     1    0     1
+                         m3           0          0     1    1     1
+                         m4           0          1     0    0     1
+                         m5           0          1     0    1     0
+                         m6           0          1     1    0     1
+                         m7           0          1     1    1     1
+                         m8           1          0     0    0     0
+                         m9           1          0     0    1     1
+                        m10           1          0     1    0     0
+                        m11           1          0     1    1     0
+                        m12           1          1     0    0     0
+                        m13           1          1     0    1     1
+                        m14           1          1     1    0     0
+                        m15           1          1     1    1     1
+
+Aquí se observa que la función vale uno en cada uno de los mintérminos que se indican
+en la sumatoria.
+
+b) Enuncie el teorema del álgebra de conmutación que se generaliza para fundamentar
+el procedimiento de construcción de los mapas y su mecánica para la reducción de
+términos.
+                              Es el teorema de absorción
+               XY  X Y  X (Y  Y )  X  1  X
+               ( X  Y )( X  Y )  X  X Y  XY  Y Y  X  X (Y  Y )  0  X
+Con diagramas de euler es más didáctico porque se observa directamente la reducción
+
+
+
+
+Se observa que en general se trata de términos adyacentes, es decir, que difieren en
+una sola variable (la cual se absorbe).
+
+       c) Explique como se genera la expresión gráfica de una tabla lógica mediante
+          un mapa de Karnaugh. Ejemplifique esto para función de 5 variables, coloque
+          en cada celda el correspondiente número de minitérmino. Y construya el
+          mapa para la función F con los datos de su tabla de verdad.
+
+    El mapa de Karnaugh es una representación gráfica de un espacio booleano de n
+dimensiones en el cual se puede representar alguna función booleana equivalente a la
+tabla de verdad.
+    Puesto que el mapa de Karnaugh representa un espacio booleano de n dimensiones
+al definir los dominios de cada variable se generan cuadros de tal forma que cualquier
+para de cuadros inmediatos deben corresponder a combinaciones de variables
+lógicamente adyacentes, es decir, que difieran en un solo bit.
+    El mapa de Karnaugh debe ser lo más cuadrado posible. Si se desea representar un
+espacio booleano de n dimensiones o variables el mapa tendrá 2 n cuadros.
+    Para representar una función booleana en un mapa de Karnaugh (MK) está debe
+estar expresada en una tabla de verdad o en alguna de las formas canónicas.
+    El MK usa un cuadro para cada mintérmino o maxtérmino de manera similar en que
+la tabla un mintérmino o maxtermino, se puede observar que cada cuadro representa
+una combinación de las variables (mintermino), el orden de los cuadros está definido
+por la adyacencia lógica.
+
+   Por ejemplo, sea una función de 5 variables, entonces su mapa de karnaugh se
+construye de la siguiente manera:
+
+                      000    001   011    010   110   111    101   100
+               00        0     4     12     8    24     28    20     16
+               01        1        5        13        9         25    29     21   17
+               11       3         7        15        11        27    31     23   19
+               10       2         6        14        10        26    30     22   18
+
+
+
+
+    Para la función F se tiene que su MK llenado de acuerdo a su tabla de verdad será
+el siguiente:
+
+                                      00        01        11        10
+                             00       10 1 4               0   12    08
+                             01       11 05                1   13     19
+                             11       13 17                1   15    0 11
+                             10       12 16                0   14    0 10
+
+
+
+   d) Explique como se deben agrupar los términos 1 contenidos en el mapa para
+   definir conjuntos rectangulares de unos. Marque en el mapa de la función F los
+   conjuntos rectangulares justifique cada agrupación del mapa.
+La minimización usando MK considerando mintérminos debe seguir los siguientes
+pasos:
+   1. Llenar el MK correspondiente con el valor de la función booleana.
+   2. Considerar los don't care como *
+   3. Agrupar los 1s adyacentes en grupos de número potencia de 2 (tratando de
+       hacer grupos rectangulares lo más grandes posibles).
+   4. Si ayuda se pueden tomar en consideración los * como 1s para hacer grupos más
+       grandes, siempre y cuando no existan conjuntos redundantes (es decir que
+       contengan puros *s o bien haya conjuntos rectangulares completamente dentro
+       de otro conjunto rectangular).
+   5. Identificar la mínima cantidad de grupos que contengan a todos los 1s.
+   6. La función minimizada será igual a la sumatoria de los dominios de esos
+       conjuntos rectangulares.
+   7. La función minimizada no es única, puesto que depende de la audacia del
+       diseñador y la forma en que agrupo los conjuntos rectangulares.
+
+                                      00        01        11        10
+                             00       10 1 4               0   12    08
+                             01       11 05                1   13     19
+                             11       13 17                1   15    0 11
+                  10    1   2   1    6    0   14    0 10
+
+
+
+                       00       01       11        10
+                  00    10 1 4            0   12    08
+                  01    11 05             1   13     19
+                  11    13 17             1   15    0 11
+                  10    12 16             0   14    0 10
+
+
+
+                       00       01       11        10
+                  00    10 1 4            0   12    08
+                  01    11 05             1   13     19
+                  11    13 17             1   15    0 11
+                  10    12 16             0   14    0 10
+
+
+
+                       00       01       11        10
+                  00    10 1 4            0   12    08
+                  01    11 05             1   13     19
+                  11    13 17             1   15    0 11
+                  10    12 16             0   14    0 10
+
+
+
+                       00       01       11        10
+                  00    10 1 4            0   12    08
+                  01    11 05             1   13     19
+                  11    13 17             1   15    0 11
+                  10    12 16             0   14    0 10
+
+
+F  WY  WXZ  W Y Z  W Z  W X
+   a la cual le aplicamos álgebra de boole para obtener la siguiente expresión
+
+   F  W ( X  Y  Z )  WZ ( X  Y )
+
+
+   e) Enuncie y explique el teorema del implicante primo. E identifiquemos para el
+mapa F.
+     Los implicantes primos son los términos que no han sido agrupados, existen
+implicantes primos esenciales y esenciales secundarios.
+
+
+
+                                   00    01       11        10
+                          00       10 1 4          0   12    08
+                          01       11 05           1   13     19
+                          11       13 17           1   15    0 11
+                          10       12 16           0   14    0 10
+
+
+
+    f) Defina que son una celda 1 distinguida, un implicante primo esencial y un
+implicante primo esencial y un implicante primo esencial secundario; el porque de su
+utilidad al hacer reducciones en un mapa. Y comience a generar la función reducida de
+F, detalle como obtiene cada unos de los términos de esa función.
+
+   Celda uno distinguida: Es aquella que contiene un solo grupo de un 1, es decir que
+no se pudo agrupar con los demás mintérminos, por lo que es un implicante primo
+esencial.
+   Implicante primo esencial: Es aquel que está contenido en un solo conjunto
+rectangular.
+   Implicante primo esencial secundario : Es aquel que está contenido en más de un
+conjunto rectangular.
+
+    La utilidad de saberlos distinguir es darles la importancia debida a la hora de
+hacer reducciones, por ejemplo es sumamente necesario incluir siempre todos los
+implicantes primos esenciales, mientras que los secundarios a pesar de que se deben
+incluir todos, pueden existir conjuntos rectangulares que absorban más implicantes
+primos esenciales secundarios y reducir más (como es el caso de la técnica de
+minimización de Quine Mcklusky).
+
+                                   00    01       11        10
+                          00        10   1    4    0   12    0   8
+                          01       11 05       1   13    19
+                          11       13 17       1   15   0 11
+                          10       12 16       0   14   0 10
+   F  WY  WXZ  W Y Z  W Z  W X
+
+
+   a la cual le aplicamos álgebra de boole para obtener la siguiente expresión
+
+   F  W ( X  Y  Z )  WZ ( X  Y )
+
+
+   Implementandola tenemos que:
+
+
+
+
+2) Sean X = x1x0 y Y = y1y0 dos números de 2 bits. El objetivo es comparar estos
+   números y determinar sus magnitudes relativas. Definiendo las salidas de la
+   siguiente forma:
+
+G=(X>Y)
+E=(X=Y)
+L=(X<y)
+Diseñe e implemente un circuito combinacional utilizando mapas de Karnaugh que
+muestre estas tres salidas.
+
+               X1     X0      Y1        Y0        X>Y       X=Y   X<Y
+               0      0       0         0          0         1     0
+               0      0       0         1          0         0     1
+               0      0       1         0          0         0     1
+               0      0       1         1          0         0     1
+               0      1       0         0          1         0     0
+               0      1       0         1          0         1     0
+               0      1       1         0          0         0     1
+               0      1       1         1          0         0     1
+               1      0       0         0          1         0     0
+               1      0       0         1          1         0     0
+               1      0       1         0          0         1     0
+               1      0       1         1          0         0     1
+               1      1       0         0          1         0     0
+               1      1       0         1          1         0     0
+               1      1       1         0          1         0     0
+               1      1       1         1          0         1     0
+
+   Función G
+
+                             00    01        11        10
+                        00    00 1 4          1   12     18
+                        01    01 05           1   13     19
+                        11    03 07           0   15    0 11
+                        10    02 06           1   14    0 10
+Función E
+                 00   01   11        10
+            00   10 0 4     0   12    08
+            01   01 15      0   13    09
+            11   03 07      1   15    0 11
+            10   02 06      0   14    1 10
+
+
+Función L
+GE  L
+CONCLUSIONES                    HERNÁNDEZ LABRA VIRGINIA
+
+   Muchas veces el álgebra boleana puede volverse tediosa y difícil en el manejo
+   para reducir una función. Es mucho más sencillo utilizar los mapas de Karnaugh
+   aunque no siempre son de gran ayuda como fue el caso de la función E del
+   ejercicio 2 de la práctica. Pero a excepciones en su mayoría son de gran
+   utilidad los mapas de Karnaugh por su simplicidad y transparencia a la hora de
+   reducir los términos.
+
+   El álgebra de boole, los mapas de Karnaugh, el método de minimización de
+   Quine Macklosky son técnicas de minimización muy usadas en el diseño de
+   circuitos combinacionales (aquellos que utilizan compuertas lógicas para su
+   implementación y la salida está en función de las variables de entrada y del
+   arreglo de las compuertas).
+
+   Los implicantes primos esenciales, celdas uno distinguidas son determinantes a
+   la hora de minimizar, puesto que no se deben olvidar estos terminos ya que no
+   están incluidos en ningún otro conjunto rectangular.
+
+   Los mapas de Karnaugh deben ser lo más cuadrados posibles y deben realizarse
+   utilizando el código Gray (porque se observan de mejor manera las
+   adyacencias). En los MK no debe existir ningún 1 sin agrupar, aunque se deben
+   tomar en cuenta que se deben realizar los conjuntos rectangulares más grandes
+   posibles en grupos de 2n .
+
+   En ocasiones el intuir las funciones a través de la tabla de verdad puede ser de
+   gran ayuda pero eso solo lo logra la pericia y práctica del diseñador.
+

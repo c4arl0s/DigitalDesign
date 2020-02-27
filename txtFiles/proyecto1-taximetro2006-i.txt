@@ -1,0 +1,14 @@
+                       PROYECTO 1
+
+En un display se muestra la tarifa de cobro de un taxi, dicha
+tarifa esta definida de la siguiente forma:
+    El banderazo inicial es de $ 0.0 y se incrementa cada 5
+      ciclos de reloj en $ 0.2 , este criterio se aplica hasta que
+      el cobro llegue a un máximo de $ 5.0.
+    A partir de esa cantidad los incrementos serán de $0.5
+Este taxímetro debe poder pausarse para establecer el cobro
+después del recorrido y debe tener la opción de inicialización
+para establecer un nuevo cobro. El cobro máximo puede ser
+de $10.0 o más pero llegando a ese valor debe detenerse el
+conteo.
+

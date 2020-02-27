@@ -1,0 +1,59 @@
+Flip flop D (Synchronized for Clock)
+
+ A diferencia de los flip flops S-C y J-K, este FF sólo tiene una
+entrada síncrona de control, D, que significa Datos. Q pasará
+al mismo estado que este presente en la entrada D cuando
+ocurra una TPP en CLK.
+
+En otras palabras, el nivel presente en D se almacenará en
+el FF en el instante en que ocurre la TTP.
+
+
+
+
+      Entradas                       Salidas
+    D        CLK                        Q
+    0                                   0
+    1                                   1
+
+Simulación en Circuit Maker incompleta:
+Transferencia de datos paralela
+
+En este punto quizá usted se pregunte cual es la utilidad del
+flip flop D, puesto que según parece la salida Q es la misma
+que la entrada D. No del todo, recuerde Q adopta el valor de
+D solo en ciertos momentos, y por lo tanto no es idéntica a D.
+En la mayoría de las aplicaciones del FF D la salida Q debe
+adoptar el valor en su entrada D sólo en instantes
+definidos.
+
+Un ejemplo de esto se ilustra en la figura siguiente:
+                                        D    Q
+                                             _
+                      DS1               CP   Q
+                     Data 8
+                      Seq 7             D    Q
+                          6                  _
+                          5             CP   Q
+                          4
+                          3
+                    CP1   2             D    Q
+                    CP2   1      V1          _
+                                        CP   Q
+                               CP1 Q1
+                               CP2 Q2
+
+
+Digamos que el data seq es un circuito lógico combinacional,
+las salidas 8, 7, 6 se transferirían a Q1, Q2, Q3 del FF para su
+almacenamiento.
+
+Usando los FF D, los niveles presentes en 8, 7, 6 se
+transferirán a Q1, Q2, Q3, respectivamente al aplicar un pulso
+de TRANSFERENCIA a las entradas comunes CLK. Los FFs
+pueden almacenar estos valores para su procesamiento
+siguiente.
+
+Este es un ejemplo de transferencia paralela de datos
+binarios, los bits 8, 7, 6 se transfieren simultáneamente.
+

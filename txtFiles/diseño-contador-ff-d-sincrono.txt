@@ -1,0 +1,166 @@
+     IEE 2712 Sistemas Digitales
+                                      Clase 12
+
+
+
+
+   Objetivos educacionales:
+   1. Encontrar el diagrama de estado desde la descripción verbal.
+   2. Diseñar circuitos combinacionales con flip-flops D y JK
+
+
+
+
+   4.5 Diseño de circuitos secuenciales
+
+Ejemplo: Convertidor serial de BCD a exceso de 3
+ Diseñar un circuito que tenga una entrada y una salida. La salida debe
+ entregar el código exceso de 3 (el bit menos significativo primero) de la
+ entrada que es un código BCD (el bit menos significativo primero también).
+
+
+                             X                             Z
+                                     BCD a exc 3
+
+             0   1   0   1                 1       0   0       0
+
+                 0   1   0       1                 1   0       0   0
+
+                     0   1       0     1               1       0   0   0
+
+                         0       1     0       1               1   0   0   0
+
+                                 0     1       0       1           1   0   0   0
+
+
+
+
+                                                                                   1
+4.5 Diseño de circuitos secuenciales
+
+
+
+
+4.5 Diseño de circuitos secuenciales
+
+                          Primer dígito:
+
+
+
+
+ Indica que se necesita
+   almacenar el estado
+
+
+
+
+                                           2
+4.5 Diseño de circuitos secuenciales
+
+                            Segundo dígito:
+
+
+
+
+Indica que NO se necesita
+      almacenar el estado
+
+
+
+
+4.5 Diseño de circuitos secuenciales
+
+
+                                    Diagrama de estado completo:
+
+
+
+
+                                                                   3
+      4.6 Diseño empleando flip-flops D
+
+
+
+
+Empleando flip-flops D
+
+
+
+
+     El estado siguiente es el mismo que la entrada actual al flip-flop, por lo
+     que hay que encontrar las entradas al flip-flop (estado siguiente) según
+     la tabla de estados.
+
+
+
+
+      4.6 Diseño empleando flip-flops D
+Ejemplo: empleando flip-flops D
+
+
+
+
+                                                                                  4
+4.6 Diseño empleando flip-flops D
+
+
+
+
+4.6 Diseño empleando flip-flops D
+
+
+
+
+                                    5
+     4.6 Diseño empleando flip-flops D
+
+
+
+
+     4.6 Diseño empleando flip-flops D
+Estados no usados (el número de estados que se necesitan no es una potencia
+de dos): se pueden usar para simplificar las expresiones.
+Peligro: si por alguna razón se cae en uno de esos estados, el comportamiento
+del circuito es impredecible.
+
+
+
+
+                                                                                6
+      4.6 Diseño empleando flip-flops D
+
+
+
+
+     4.7 Diseño empleando flip-flops JK
+Ejemplo: empleando flip-flops JK
+   El diseño se realiza igual que para flip-flops D con la diferencia que ahora la
+   entrada no es directamente el próximo estado sino una transición dada por el
+   flip-flop.
+
+
+ Tablas de excitación:
+
+
+
+
+                                                                                     7
+    4.7 Diseño empleando flip-flops JK
+Ejemplo
+
+
+
+
+    4.7 Diseño empleando flip-flops JK
+
+
+
+
+                                         8
+4.7 Diseño empleando flip-flops JK
+
+
+
+
+                                     9
+

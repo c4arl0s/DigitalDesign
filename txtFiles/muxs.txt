@@ -1,0 +1,23 @@
+Multiplexores (selector de datos)
+
+Un estereo de los que tenemos en casa quizá tenga un
+interruptor para seleccionar música entre una de cuatro
+fuentes: un casette de cinta, un disco compacto, un
+sintonizador de radio, o una entrada auxiliar de audio o de
+video, por ejemplo una VCR o un DVD. El interruptor
+selecciona una de las señales electrónicas de estas cuatro
+fuentes y la envía al amplificador de potencia y de allí a las
+bocinas. En términos simples, esto es lo que hace un
+multiplexor (MUX): selecciona una de varias señales de
+entrada y la envía a la salida.
+
+
+
+
+Un multiplexor digital o selector de datos es un circuito
+lógico que acepta varias entradas de datos digitales y
+selecciona una de ellas en cualquier instante para
+enviarla a la salida. El enrutamiento de entrada deseado
+hacia la salida se controla mediante entradas de SELECT
+(entradas de dirección)
+

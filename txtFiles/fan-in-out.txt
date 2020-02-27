@@ -1,0 +1,19 @@
+Fan-in Fan-out
+
+
+
+Fan-in
+         The number of standard loads drawn by an input to ensure reliable operation.
+         Most inputs have a fan-in of 1.
+
+         El número de cargas dibujadas en una entrada asegura punto de
+         operación. La mayoría de entradas es de fan-in de 1
+
+Fan-out
+         The number of standard loads that can be reliably driven by an output, without
+         causing the output voltage to shift out of its legal range of values
+
+         El numero de cargas que pueden ser manejadas de forma
+         confiable por una entrada, sin causar que la tensión de salida
+         cambie de su rango legal de valores
+

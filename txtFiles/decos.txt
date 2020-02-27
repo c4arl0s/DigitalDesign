@@ -1,0 +1,43 @@
+Decodificadores
+
+El decodificador es un circuito lógico que acepta un conjunto
+de entradas, representa un número binario y sólo activa la
+salida que corresponde a ese número de entrada.
+
+
+
+
+   2n códigos
+Para
+   deun decodificador de 2x4
+      entrada                     Solo una salida es
+                                  alta por cada
+                                  código de entrada
+
+
+
+    Entradas                          Salidas
+   I1       I0          D3         D2        D1        D0
+   0         0           0          0         0        1
+   0         1           0          0         1         0
+   1         0           0         1          0         0
+   1         1          1           0         0         0
+
+En otras palabras, un circuito decodificador analiza sus
+entradas, determina que número binario esta presente allí y
+activa la salida que corresponde a ese número; el resto de las
+salidas permanecen inactivas.
+
+Aplicaciones del decodificador
+
+Los decodificadores se emplean cuando una salida o grupo de
+salidas se deban activar sólo cuando ocurra una combinación
+específica de niveles de entrada. Estos niveles de entrada a
+veces los proporcionan las salidas de un contador o de un
+registro. Cuando las entradas del decodificador provienen de
+un contador que se esta pulsando de manera continua, las
+salidas del decodificador se activan en forma secuencial y se
+pueden emplear como señales de sincronización para
+encender o apagar dispositivos en tiempos específicos.
+Simulación con circuit maker:
+

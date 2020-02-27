@@ -1,0 +1,108 @@
+          UNIVERSIDAD NACIONAL
+           AUTÓNOMA DE MÉXICO
+
+
+            FACULTAD DE INGENIERIA
+
+
+           Trabajo: PRACTICA 5 MULTIPLEXOR
+
+EQUIPO:
+
+
+
+
+             ASIGNATURA: LAB DISEÑO DIGITAL
+
+GRUPO:
+UNAM, Facultad de Ingeniería                                 03/11/2005 17:44
+O11/p11
+Autor: Equipo 10                                             Tìtulo: P5 Diseño Digital
+________________________________________________________________________________
+__________
+                    11 de octubre de 2005 , Ciudad Universitaria, Mèxico
+
+Objetivo: Comprobar la conveniencia de utilizar circuitos integrados que integran funciones
+especificas (en este caso la de multiplexar) en comparación de la implementación de esta
+función de forma discreta.
+
+Problema 1:
+Existe un tanque cilíndrico con capacidad de 100 litros, el tanque esta dividido en cuatro
+secciones de igual capacidad, un flotador codifica el nivel del agua en el tanque con cuatro
+líneas de salida, como se indica en la siguiente tabla:
+
+Nivel de litros de agua en el tanque       T3     T2   T1   T0
+0-8                                        0      0    1    1
+8-16                                       0      0    1    0
+16-25                                      0      1    1    0
+25-33                                      0      1    1    1
+33-41                                      0      1    0    1
+41-50                                      0      1    0    0
+50-58                                      1      1    0    0
+58-66                                      1      1    0    1
+66-75                                      1      1    1    1
+75-83                                      1      1    1    0
+83-91                                      1      0    1    0
+91-100                                     1      0    1    1
+
+Diseñe e implemente un circuito combinacional que indique en binario la sección en la que se
+encuentra el nivel del agua en el tanque utilizando las salidas codificadas del flotador. Las
+salidas de este circuito (L1, L0), se pueden verificar en alto y en bajo. El circuito deberá tener
+más de dos niveles de combinación.
+
+Problema 2:
+
+2.1 Explicar el funcionamiento de los multiplexores, sus características y la función que
+describe su funcionamiento. Haga una descripción detallada de la configuración de la
+configuración y funciones de un multiplexor tipo 74151.
+
+Multiplexores (selector de datos)
+
+Un estereo de los que tenemos en casa quizá tenga un interruptor para seleccionar música entre
+una de cuatro fuentes: un casette de cinta, un disco compacto, un sintonizador de radio, o una
+entrada auxiliar de audio o de video, por ejemplo una VCR o un DVD. El interruptor selecciona una
+de las señales electrónicas de estas cuatro fuentes y la envía al amplificador de potencia y de allí a
+                                         2 de 4
+UNAM, Facultad de Ingeniería                                           03/11/2005 17:44
+O11/p11
+Autor: Equipo 10                                                       Tìtulo: P5 Diseño Digital
+________________________________________________________________________________
+__________
+las bocinas. En términos simples, esto es lo que hace un multiplexor (MUX): selecciona una de
+varias señales de entrada y la envía a la salida.
+
+
+
+
+Un multiplexor digital o selector de datos es un circuito lógico que acepta varias entradas de datos
+digitales y selecciona una de ellas en cualquier instante para enviarla a la salida. El enrutamiento
+de entrada deseado hacia la salida se controla mediante entradas de SELECT (entradas de
+dirección)
+
+Multiplexor tipo 74151
+
+
+
+
+                                        3 de 4
+UNAM, Facultad de Ingeniería                                 03/11/2005 17:44
+O11/p11
+Autor: Equipo 10                                             Tìtulo: P5 Diseño Digital
+________________________________________________________________________________
+__________
+Tabla de verdad del 74151
+
+
+
+
+Este tiene tres entradas de selección, por lo tanto, 23 = 8 entradas, una salida de selección,
+
+2.2 Para el problema 1 realice el diseño y la implementación pero ahora haciendo un
+multiplexor 8:1 y comprobar que realiza la misma función que al implementarlo con
+compuertas. Hacer la comprobación mediante álgebra del problema.
+
+
+
+
+                                       4 de 4
+

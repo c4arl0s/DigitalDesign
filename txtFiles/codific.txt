@@ -1,0 +1,7 @@
+Codificadores
+
+Un codificador tiene un número de líneas de entrada, de las
+   cuales sólo una se activa en un tiempo determinado y
+produce un código de salida de N bits, dependiendo de cuál
+                     entrada se active.
+

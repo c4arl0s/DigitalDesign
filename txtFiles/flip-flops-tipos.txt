@@ -1,0 +1,199 @@
+          UNIVERSIDAD NACIONAL
+           AUTÓNOMA DE MÉXICO
+
+
+           FACULTAD DE INGENIERIA
+
+
+           Trabajo: Tarea Tipos de Flip Flops
+
+EQUIPO:
+              SANTIAGO CRUZ CARLOS
+
+
+               ASIGNATURA: Diseño Digital
+
+                        GRUPO:
+UNAM, Facultad de Ingeniería                                     21/10/2017 22:59:16
+Autor: Santiago Cruz Carlos                                Titulo: Tipos de Flip Flop's
+________________________________________________________________________________
+__________
+           sábado, 21 de octubre de 2017, Ciudad Universitaria, México, DF
+
+
+
+
+                                           2
+UNAM, Facultad de Ingeniería                                     21/10/2017 22:59:16
+Autor: Santiago Cruz Carlos                                Titulo: Tipos de Flip Flop's
+________________________________________________________________________________
+__________
+
+Flip flop
+
+El elemento más importante de la memoria es el flip flop, el cual esta constituido
+por un ensamble de compuertas lógicas. Aunque una compuerta lógica no puede por
+si misma no tiene capacidad para almacenar, se pueden conectar varias a la vez de
+tal manera que permitan el almacenamiento para la información.
+
+NAND LATCH
+
+El circuito FF más básico se puede construir a base de dos compuertas NAND o dos
+compuertas NOR.
+
+
+
+
+SET=CLEAR=1. Esta condición es el estado normal de reposo y no tiene efecto en el
+estado de salida. Las salidas Q y Q_ permanecerán en el estado que tenían antes de
+esta condición de entrada.
+SET=0, CLEAR=1. Esto siempre, causará que la salida pase a alto Q=1, donde
+permanecerá incluso después de que SET retorne a ALTO. A esto se le llama
+establecimiento del latch.
+SET=1, CLEAR=0. Esto siempre producirá el estado Q=0, en el cual la salida
+permanecerá incluso después que BORRAR retorne a ALTO. A esto se le llama
+establecimiento o reestablecimiento del latch.
+SET=CLEAR=0. Esta condición intenta establecer y borrar el latch al mismo tiempo y
+puede producir resultados ambiguos. No se debe emplear.
+
+
+
+
+                                           3
+UNAM, Facultad de Ingeniería                                     21/10/2017 22:59:16
+Autor: Santiago Cruz Carlos                                Titulo: Tipos de Flip Flop's
+________________________________________________________________________________
+__________
+NOR LATCH
+
+
+
+
+FLIP FLOP D (SYNCHRONIZED FOR CLOCK)
+
+ A diferencia de los flip flops S-C y J-K, este FF sólo tiene una entrada síncrona de
+control, D, que significa Datos. Q pasará al mismo estado que este presente en la
+entrada D cuando ocurra una TPP en CLK.
+
+En otras palabras, el nivel presente en D se almacenará en el FF en el instante en
+que ocurre la TTP.
+
+
+
+
+         Entradas                         Salidas
+     D              CLK                      Q
+     0                                       0
+     1                                       1
+
+Simulación en Circuit Maker incompleta:
+
+
+
+
+                                           4
+UNAM, Facultad de Ingeniería                                     21/10/2017 22:59:16
+Autor: Santiago Cruz Carlos                                Titulo: Tipos de Flip Flop's
+________________________________________________________________________________
+__________
+
+
+
+
+TRANSFERENCIA DE DATOS PARALELA
+
+En este punto quizá usted se pregunte cual es la utilidad del flip flop D, puesto que
+según parece la salida Q es la misma que la entrada D. No del todo, recuerde Q
+adopta el valor de D solo en ciertos momentos, y por lo tanto no es idéntica a D.
+
+En la mayoría de las aplicaciones del FF D la salida Q debe adoptar el valor en su
+entrada D sólo en instantes definidos.
+
+Un ejemplo de esto se ilustra en la figura siguiente:
+
+                                                    D    Q
+                                                         _
+                                DS1                 CP   Q
+                               Data 8
+                                Seq 7               D    Q
+                                    6                    _
+                                    5               CP   Q
+                                    4
+                                    3
+                              CP1   2               D    Q
+                              CP2   1          V1        _
+                                                    CP   Q
+                                           CP1 Q1
+                                           CP2 Q2
+
+
+
+
+Digamos que el data seq es un circuito lógico combinacional, las salidas 8, 7, 6 se
+transferirían a Q1, Q2, Q3 del FF para su almacenamiento.
+
+                                           5
+UNAM, Facultad de Ingeniería                                     21/10/2017 22:59:16
+Autor: Santiago Cruz Carlos                                Titulo: Tipos de Flip Flop's
+________________________________________________________________________________
+__________
+
+Usando los FF D, los niveles presentes en 8, 7, 6 se transferirán a Q1, Q2, Q3,
+respectivamente al aplicar un pulso de TRANSFERENCIA a las entradas comunes CLK.
+Los FFs pueden almacenar estos valores para su procesamiento siguiente.
+
+Este es un ejemplo de transferencia paralela de datos binarios, los bits 8, 7, 6 se
+transfieren simultáneamente.
+
+
+
+FLIP-FLOP J-K SINCRONIZADO POR RELOJ (SYNCHRONIZED FOR CLOCK)
+
+Las entradas J y K controlan el estado del FF de la misma manera en que las
+entradas S y C controlan el FF S-C, excepto por una diferencia importante: la
+condición J=K=1 no es ambigua. Para la condición, 1,1, el FF siempre pasará a su
+estado opuesto cuando se lleve acabo la transición positiva de la señal de reloj. A
+esta operación se le llama modo de cambios de estados. En este modo, si J y K se
+dejan en ALTO, el FF cambiará estados (conmutará) para cada TTP de reloj.
+
+
+
+
+                Entradas                                 Salidas
+     J             K             CLK                        Q
+     0             0                                Q0 (sin cambio)
+     1             0                                        1
+     0             1                                        0
+     1             1                              Q0_ (cambia estado)
+
+
+FLIP-FLOP S-C SINCRONIZADO POR RELOJ (SYNCHRONIZED FOR CLOCK)
+
+A continuación se muestra un flip-flop S-C sincronizado por reloj, que se dispara
+por el borde de transición positiva de la señal de reloj. Esto significa que el FF
+puede cambiar estados sólo cuando una señal aplicada a su entrada de reloj hace
+                                           6
+UNAM, Facultad de Ingeniería                                     21/10/2017 22:59:16
+Autor: Santiago Cruz Carlos                                Titulo: Tipos de Flip Flop's
+________________________________________________________________________________
+__________
+una transición de cero a uno. Las entradas S y C controlan el estado del FF de la
+misma manera en que se describió antes para el latch de compuerta NOR; pero el
+FF no responde a estas entradas hasta que ocurre un TPP (Transición con
+Pendiente Positiva) de la señal de reloj.
+
+
+
+
+                Entradas                                 Salidas
+     S             C             CLK                        Q
+     0             0                                Q0 (sin cambio)
+     1             0                                        1
+     0             1                                        0
+     1             1                                    Ambigua
+
+
+
+
+                                           7
+

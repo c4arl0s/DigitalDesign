@@ -1,0 +1,221 @@
+ALMACENAMIENTO Y TRANSFERENCIA DE DATOS
+
+El uso más común de los FF es el almacenamiento de datos o
+información. Los datos pueden representar valores numéricos
+(por ejemplo, números binarios, números decimales
+codificados en BCD) o alguno de los tipos de datos que se
+hayan codificado en binario. Por lo general estos datos se
+almacenan en grupos de flip flops llamados registros.
+
+La operación que se realiza con más frecuencia en datos que
+están almacenados en un FF o un registro es la operación de
+transferencia de datos. Esto operación implica la
+transferencia de datos de un FF o un registro a otro. En la
+figura de abajo se ilustra como se puede llevar acabo la
+transferencia de datos entre dos flip flops, usando los FF S-C,
+J-J y D sincronizados por reloj.
+                 U1A          U1B
+   DS1                                      DS1
+  Data 8        J        Q   J        Q    Data 8
+   Seq 7        CP       _   CP       _     Seq 7            U2              U3
+            6   K        Q   K        Q           6
+            5        R            R               5      D        Q      D        Q
+            4                                     4               _               _
+            3                                     3      CP       Q      CP       Q
+ CP1        2        V1                   CP1     2
+ CP2        1    CP1 Q1                   CP2     1           V1
+       V2        CP2 Q2                          V2          CP1 Q1
+  CP1 Q1                                        CP1 Q1       CP2 Q2
+  CP2 Q2                                        CP2 Q2                TRANSFERENCIA
+
+
+En cada caso el valor lógico que está normalmente
+almacenado en el FF 1A se transfiere al 1B en el TPN de pulso
+de TRANSFERENCIA. Así, después de esta TPN la salida 1B
+será la misma que la salida 1ª.
+
+Las operaciones de transferencia que se muestran en estas
+figuras son ejemplos de transferencia síncrona, puesto que
+el control síncrono y las entradas CLK se usan para realizar la
+transferencia.
+
+Una operación de transferencia también se puede llevar a
+cabo usando las entradas asíncronas de un FF.
+                                           U4A
+
+
+                               U6B                                   U6A
+                       S                                     S
+                  J        Q                            J        Q
+                  CP       _                            CP       _
+                  K        Q                            K        Q
+                       R                                     R
+                                           U4B
+
+                   V3
+                  CP1 Q1
+                  CP2 Q2
+
+
+Aquí podemos observar como se puede llevar a cabo una
+transferencia asíncrona, usando las entradas PRESET y
+CLEAR de cualquier FF.
+
+La transferencia asíncrona se realiza independientemente de
+las entradas síncronas y CLK del FF. La transferencia
+asíncrona también se llama transferencia atascada, por que
+los datos se pueden "atascar" en el FF Q2 incluso si sus
+entradas síncronas están activas.
+
+Transferencia de datos paralela
+
+                                                       Y3
+                                U1                 D        Q
+                               4076                         _
+                           D3        Q3            CP       Q
+                           D2        Q2                Y2
+                           D1        Q1
+                           D0        Q0            D        Q
+                                                            _
+                           ED1                     CP       Q
+                           ED0
+                           EO1                         Y1
+                           EO0
+                           CP                      D        Q
+                           MR              V1               _
+                                                   CP       Q
+                                          CP1 Q1
+                                          CP2 Q2
+
+
+
+
+TRANSFERENCIA DE DATOS EN SERIE: REGISTROS DE
+DESPLAZAMIENTO
+
+Configuración del registro de desplazamiento
+
+Un registro de desplazamiento es un grupo de FF
+configurados de tal manera que los números binarios
+almacenados en los FFs se desplazan de un FF al siguiente
+para cada pulso de reloj.
+A continuación se presentan la siguiente simulación de un
+registro de desplazamiento, como podemos ver en este
+estado no hay transferencia.
+
+                               DIN                  X3                X2                X1                  X0
+
+                                      +V                  +V                +V                  +V
+
+                                          S                   S                 S                   S
+     DATA IN                         J        Q          J        Q        J        Q          J        Q
+                                     CP       _          CP       _        CP       _          CP       _
+                                     K        Q          K        Q        K        Q          K        Q
+
+                          CP
+           CP1 Q1
+           CP2 Q2
+
+
+
+
+                                                          Select 'Simulation > Digital Options'
+Four-bit shift register.                                  Set 'X Magnification' = 4
+
+                    880        890                900         910          920           930                940   950
+CP
+DIN
+X3
+X2
+
+X1
+X0
+
+
+
+Cambiando el estado en DATA IN tenemos:
+
+                               DIN                  X3                X2                X1                  X0
+
+                                      +V                  +V                +V                  +V
+
+                                          S                   S                 S                   S
+     DATA IN                         J        Q          J        Q        J        Q          J        Q
+                                     CP       _          CP       _        CP       _          CP       _
+                                     K        Q          K        Q        K        Q          K        Q
+
+                          CP
+           CP1 Q1
+           CP2 Q2
+
+
+
+
+                                                          Select 'Simulation > Digital Options'
+Four-bit shift register.                                  Set 'X Magnification' = 4
+        8040   8050   8060   8070   8080   8090   8100   8110   8120
+ CP
+ DIN
+ X3
+ X2
+
+ X1
+ X0
+
+
+
+Requisitos de tiempo de retención. [Falta]
+
+Transferencia en serie entre registros. [Falta]
+
+Operación de desplazamiento a la izquierda [Falta]
+
+Transferencia paralela vs. en serie
+
+En la transferencia paralela, toda la información se
+transfiere simultáneamente en el evento de un pulso único
+del comando de transferencia, sin importar cuantos bits se
+transfieran. En la transferencia en serie, la transferencia
+completa de N bits requiere de N pulsos de reloj. Entonces, es
+obvio que la transferencia paralela es mucho más rápida que
+la transferencia en serie usando registros de desplazamiento.
+
+En la transferencia paralela, la salida de cada FF en el
+registro X esta conectado a una entrada correspondiente del
+FF en el registro Y. En la transferencia en serie, solo el
+último FF en el registro X está conectado al registro Y.
+entonces, en general, en la transferencia paralela se
+requieren más interconexiones entre el registro emisor (X) y
+el registro receptor (Y) que en la transferencia en serie. Esta
+diferencia se hace más crítica cuando se transfiere un número
+mayor de información. Esta es una consideración importante
+cuando los registros de emisión y recepción están alejados
+entre sí, puesto que determinan cuantas líneas (alambres) se
+necesitan para transmitir la información.
+
+La elección de transmisión paralela o en serie depende de la
+aplicación y especificaciones de un sistema en particular. A
+menudo se usa una combinación de ambos para sacar
+provecho de la velocidad de transferencia paralela y de la
+economía y simplicidad de la transferencia en serie.
+
+DIVISIÓN Y CONTEO DE FRECUENCIA [FALTA]
+
+Operación de conteo [falta]
+Diagramas de transición de estados [falta]
+Numero MOD [falta]
+
+APLICACIÓN EN MICROCOMPUTADORA [falta]
+
+DISPOSITIVOS DE DISPARO TIPO SCHMITT [falta]
+
+UN DISPARADOR         MULTIVIBRADOR       MONOESTABLE
+[falta]
+
+ANALISIS DE CIRCUITOS SECUENCIALES [falta]
+
+CIRCUITOS GENERADORES DE RELOJ [falta]
+
+APLICACIONES  USANDO          DISPOSITIVOS      LOGICOS
+PROGRAMABLES. [falta]
+

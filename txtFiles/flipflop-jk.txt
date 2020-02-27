@@ -1,0 +1,23 @@
+Flip-flop J-K Sincronizado por Reloj (Synchronized for Clock)
+
+Las entradas J y K controlan el estado del FF de la misma
+manera en que las entradas S y C controlan el FF S-C,
+excepto por una diferencia importante: la condición
+J=K=1 no es ambigua. Para la condición, 1,1, el FF
+siempre pasará a su estado opuesto cuando se lleve
+acabo la transición positiva de la señal de reloj. A esta
+operación se le llama modo de cambios de estados. En
+este modo, si J y K se dejan en ALTO, el FF cambiará
+estados (conmutará) para cada TTP de reloj.
+
+
+
+
+             Entradas                          Salidas
+    J            K          CLK                   Q
+    0            0                         Q0 (sin cambio)
+    1            0                                 1
+    0            1                                 0
+    1            1                          Q0_ (cambia
+                                               estado)
+

@@ -1,0 +1,157 @@
+UNAM, FACULTAD DE INGENIERÍA                             SANTIAGO CRUZ CARLOS
+TAREA 1 DISEÑO DIGITAL                      MIÉRCOLES, 23 DE AGOSTO DE 2006
+
+
+                  UNIVERSIDAD NACIONAL
+                   AUTÓNOMA DE MÉXICO
+
+
+                      FACULTAD DE INGENIERIA
+
+
+         Trabajo:     SISTEMAS DE NUMERACION COMPLEMENTARIOS
+
+
+
+      EQUIPO:
+                               SANTIAGO CRUZ CARLOS
+
+
+                           ASIGNATURA: DISEÑO DIGITAL
+
+      GRUPO:
+
+
+
+
+                                   1 de 5
+UNAM, FACULTAD DE INGENIERÍA                                      SANTIAGO CRUZ CARLOS
+TAREA 1 DISEÑO DIGITAL                               MIÉRCOLES, 23 DE AGOSTO DE 2006
+
+          sábado, 21 de octubre de 2017, Ciudad Universitaria, México, DF
+
+
+
+
+                                      2 de 5
+UNAM, FACULTAD DE INGENIERÍA                                            SANTIAGO CRUZ CARLOS
+TAREA 1 DISEÑO DIGITAL                                     MIÉRCOLES, 23 DE AGOSTO DE 2006
+
+                    SISTEMAS DE NUMERACION COMPLEMENTARIOS
+
+Para abordar este tema es necesario ver la representación de números negativos, el cual
+la mayor parte de las computadoras emplean alguno de los sistemas numéricos de
+complemento que se presentarán posteriormente.
+
+Representación de magnitud con signo
+
+En el sistema de magnitud con signo, un número se compone de una magnitud y de un
+símbolo que indica si la magnitud es positiva o si es negativa. De esta forma,
+interpretamos los números decimales +98, -57, +123.5, y -13, de la manera habitual, y
+también suponemos que el signo es "+0" y "-0", pero ambas tienen el mismo valor.
+
+El sistema de magnitud con signo se aplica a los números binarios haciendo uso de una
+posición de bit extra para representar el signo ( el bit de signo). Tradicionalmente, el
+bit más significativo (MSB) de una cadena de bits es empleado como bit de signo
+(0=signo +, 1= signo -) y los bits de menor orden contienen la magnitud. Así podemos
+describir varios enteros de 8 bits con magnitud de signo y sus equivalencias decimales.
+
+010101012 =8510     110101012 =-8510
+
+el sistema de magnitud con signo tiene un número idéntico de enteros positivos y
+negativos. Un entero de magnitud con signo de n bits está situado dentro del intervalo
+que va desde ­(2n-1-1) hasta +(2n-1-1) y existen dos posibles representaciones del cero.
+
+Mientras un sistema de magnitud con signo convierte en negativo un número al cambiar
+su signo, un sistema numérico de complemento convierte en negativo un número
+tomando su complemento como definido por el sistema. Tomar el complemento es más
+difícil que cambiar el signo, pero dos números en un sistema numérico de complemento
+pueden sumarse o restarse directamente sin tener que usar las verificaciones de
+magnitud y signo que requiere el sistema de magnitud con signo. Describiremos dos
+sistemas numéricos de complemento, llamados "el complemento de base" y "el
+complemento de base reducida".
+
+En cualquier sistema numérico de complemento, normalmente tratamos con un número
+fijo de dígitos, digamos n. (Sin embargo, podemos aumentar el número de dígitos
+mediante "extensión de signo" como se muestra en el siguiente ejercicio, y disminuir el
+número mediante el truncamiento de los dígitos de orden mayor como se muestra en el
+segundo ejercicio.) suponemos adicionalmente que la base es r, y que los números
+tienen la forma
+                                D  d n 1d n  2 d n 3    d1d 0
+
+El punto de base se encuentra a la derecha y por tanto el número es un entero. Si una
+operación produce un resultado que requiera más de n dígitos, eliminamos el (los)
+digito(s) extra de mayor orden. Si un número D se complementa dos veces, el resultado
+será D.
+REPRESENTACION DE COMPLEMENTO DE BASE
+
+                                        3 de 5
+UNAM, FACULTAD DE INGENIERÍA                                           SANTIAGO CRUZ CARLOS
+TAREA 1 DISEÑO DIGITAL                                    MIÉRCOLES, 23 DE AGOSTO DE 2006
+
+
+En un sistema de complemento de base, el complemento de un número de n dígitos se
+obtiene al restarlo de rn. en el sistema numérico decimal, el complemento de base se
+denomina complemento de 10. algunos ejemplos utilizando números decimales de 4
+dígitos (y resta de 10,000) se muestran en la siguiente tabla.
+
+número    Complemento de 10 Complemento de 9
+1849      8151              8150
+2067      7933              7932
+100       9900              9899
+7         9993              9992
+8151      1849              1848
+0         10000 (=0)        9999
+
+Por definición, el complemento de base de un número D de n dígitos se obtiene al
+restarlo de rn. Si D se encuentra entre 1 y rn-1, esta resta produce otro número entre 1 y
+rn-1. Si D es cero, el resultado de la resta es r n, lo cual tiene la forma 100...00 donde hay
+un total de n+1 dígitos. Descartamos el signo extra de mayor orden y obtenemos el
+resultado 0. Por consiguiente, solo existe una representación de cero en un sistema de
+complemento de base.
+
+Parece de la definición que una operación de resta es necesaria para calcular el
+complemento de base de D. Sin embargo, esta resta puede evitarse al volver a escribir r n
+como (rn-1)+1 y rn-D como ((rn-1)-D)+1. El número rn-1 tiene la forma mmm....mmm
+donde m= r-1 y hay n cantidad de m's. Por ejemplo, 10,000 es igual a 9,999+1. Si
+definimos el complemento de un dígito d como r-1-d, entonces (r n-1)-D se obtiene
+mediante la complementación de los dígitos de D. Por consiguiente, el complemento de
+base de un número D se obtiene al complementar los dígitos individualmente de D y
+sumar 1. Por ejemplo el complemento de 10 es 1849+1, o 1851. Debería confirmarse que
+este truco también funciona para los ejemplos anteriores de complementos de 10.
+
+
+Digito Binari    Octal Decimal Hexadecimal
+       o
+0      1         7       9         F
+1      0         6       8         E
+2      -         5       7         D
+3      -         4       6         C
+4      -         3       5         B
+5      -         2       4         A
+6      -         1       3         9
+7      -         0       2         8
+8      -         -       1         7
+9      -         -       0         6
+A      -         -       -         5
+B      -         -       -         4
+
+                                          4 de 5
+UNAM, FACULTAD DE INGENIERÍA                                        SANTIAGO CRUZ CARLOS
+TAREA 1 DISEÑO DIGITAL                                 MIÉRCOLES, 23 DE AGOSTO DE 2006
+
+C      -        -       -         3
+D      -        -       -         2
+E      -        -       -         1
+F      -        -       -         0
+
+
+
+
+BIBLIOGRAFIA
+
+F, WAKERLY, John, Diseño digital, principios y aplicaciones
+         3ª. Ed. Ed. Pearson Education. 2001.
+
+                                       5 de 5
+

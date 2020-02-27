@@ -1,0 +1,293 @@
+          UNIVERSIDAD NACIONAL
+           AUTÓNOMA DE MÉXICO
+
+
+             FACULTAD DE INGENIERIA
+
+
+                       Titulo: Proyecto final
+
+
+EQUIPO:
+                Orozco Gómez Sergio Armando
+                    Santiago Cruz Carlos
+
+
+
+          ASIGNATURA: Laboratorio de Diseño Digital
+
+                            GRUPO:
+UNAM, Facultad de Ingeniería                                               21/10/2017
+23:09:17
+Orozco Gómez Sergio Armando, Santiago Cruz Carlos           Titulo: Proyecto final
+________________________________________________________________________________
+__________
+             sábado, 21 de octubre de 2017, Ciudad Universitaria, México, DF
+INTRODUCCION:
+
+FOTODIODOS:
+
+Sabemos que cuando un diodo es polarizado inversamente existe una pequeña corriente circulando
+a su través que denominamos corriente inversa de saturación. Esta corriente es debida a los pares
+electrón-hueco generados en la zona desierta que se produce en la unión de los materiales p y n. En
+los diodos normales esta generación se produce exclusivamente debido a la energía térmica del
+material (esto es a su temperatura). Sin embargo es posible diseñar dispositivos donde esta
+generación se produce mediante la absorción de energía de un fotón incidente (luz). En este caso la
+corriente inversa del diodo es función de la potencia luminosa incidente al dispositivo. Estos son los
+fotodiodos.
+Los fotodiodos son baratos y presentan tiempos de respuesta bastante rápidos. Su principal
+aplicación es la medida de la intensidad de la radiación y en comunicaciones mediante acoplamiento
+directo o como receptores en transmisión de señales mediante fibras ópticas. Se utilizan, también, en
+control de iluminación y brillo, control remoto por infrarrojos, monitorización de llamas, enfoque y
+control de exposición automático en cámaras. Pueden utilizarse en la medida de temperaturas a
+distancia y combinados con una fuente de luz se emplean en codificadores de posición, medidas de
+distancia etc.
+
+FLIP FLOPS
+
+El elemento más importante de la memoria es el flip flop, el cual esta constituido por un
+ensamble de compuertas lógicas. Aunque una compuerta lógica no puede por si misma
+no tiene capacidad para almacenar, se pueden conectar varias a la vez de tal manera
+que permitan el almacenamiento para la información.
+
+FLIP FLOP D (SYNCHRONIZED FOR CLOCK)
+
+ A diferencia de los flip flops S-C y J-K, este FF sólo tiene una entrada síncrona de control, D, que
+significa Datos. Q pasará al mismo estado que este presente en la entrada D cuando ocurra una
+TPP en CLK.
+
+En otras palabras, el nivel presente en D se almacenará en el FF en el instante en que ocurre la
+TTP.
+
+
+
+
+           Entradas                              Salidas
+
+                                                  2
+UNAM, Facultad de Ingeniería                                               21/10/2017
+23:09:17
+Orozco Gómez Sergio Armando, Santiago Cruz Carlos           Titulo: Proyecto final
+________________________________________________________________________________
+__________
+      D             CLK                       Q
+      0                                        0
+      1                                        1
+
+Simulación en Circuit Maker incompleta:
+
+
+
+
+CONTADORES
+
+En electrónica digital, un contador (counter en inglés) es un circuito secuencial construido a partir de
+biestables y puertas lógicas capaz de realizar el cómputo de los impulsos que recibe en la entrada
+destinada a tal efecto, almacenar datos o actuar como divisor de frecuencia. Habitualmente, el
+cómputo se realiza en un código binario, que con frecuencia será el binario natural o el BCD natural
+(contador de décadas).
+
+Existen diversos tipos de contadores:
+
+       Contadores de rizado.
+       Contadores paralelos.
+       Contadores de rizado mod-6.
+       Contador Johnson. Activa una sola salida entre varias. En respuesta al pulso de conteo, la
+       salida siguiente pasa a ser la activa. No se emplea un contador binario seguido de un
+       decodificador debido a que, al conmutar entre dos estados, podría producir pulsos espúrios en
+       otras salidas. El 4017 es un contador johnson de 10 estados.
+
+
+                                                   3
+UNAM, Facultad de Ingeniería                                                                21/10/2017
+23:09:17
+Orozco Gómez Sergio Armando, Santiago Cruz Carlos                            Titulo: Proyecto final
+________________________________________________________________________________
+__________
+"Se utilizan para llevar el control del número de ocasiones en que se realiza una operación o se
+cumple una condición. Los incrementos son generalmente de uno en uno."
+
+
+
+
+DECODIFICADORES
+
+El decodificador es un circuito lógico que acepta un conjunto de entradas, representa un
+número binario y sólo activa la salida que corresponde a ese número de entrada.
+
+
+
+
+   2n códigos de
+Para un decodificador de 2x4
+   entrada                                      Solo una salida es alta
+                                                por cada código de
+                                                entrada
+
+
+
+                   Entradas                                   Salidas
+              I1              I0           D3            D2             D1           D0
+              0                0            0            0              0            1
+              0                1            0            0              1            0
+              1                0            0            1              0            0
+              1                1            1            0              0            0
+
+En otras palabras, un circuito decodificador analiza sus entradas, determina que número binario
+esta presente allí y activa la salida que corresponde a ese número; el resto de las salidas
+permanecen inactivas.
+
+Aplicaciones del decodificador
+
+Los decodificadores se emplean cuando una salida o grupo de salidas se deban activar sólo
+cuando ocurra una combinación específica de niveles de entrada. Estos niveles de entrada a
+veces los proporcionan las salidas de un contador o de un registro. Cuando las entradas del
+decodificador provienen de un contador que se esta pulsando de manera continua, las salidas
+del decodificador se activan en forma secuencial y se pueden emplear como señales de
+sincronización para encender o apagar dispositivos en tiempos específicos.
+                                                  4
+UNAM, Facultad de Ingeniería                                               21/10/2017
+23:09:17
+Orozco Gómez Sergio Armando, Santiago Cruz Carlos           Titulo: Proyecto final
+________________________________________________________________________________
+__________
+Simulación con circuit maker:
+
+
+
+
+DISPLAY 7 SEGMENTOS
+
+El tipo más conocido de indicador alfanumérico es el display de siete segmentos, el cual comprende
+siete segmentos fotoeléctricos accesibles independientemente (tales como LEDs, elementos de
+cristal líquido, de descarga de gas, fluorescentes, etc.), dispuestos tal como se indica en la figura 1.
+Los segmentos son denominados convencionalmente de "a" a "g", siendo posible hacer que
+muestren cualquier número del 0 al 9 o un carácter alfabético de la A a la F (mezclando letras
+mayúsculas y minúsculas) activando estos segmentos en distintas combinaciones, tal como se
+muestra en la tabla de la figura.
+
+
+
+
+                                                   5
+UNAM, Facultad de Ingeniería                                               21/10/2017
+23:09:17
+Orozco Gómez Sergio Armando, Santiago Cruz Carlos           Titulo: Proyecto final
+________________________________________________________________________________
+__________
+
+
+
+
+                                                         1      1.44
+ OBJETIVO:                                          f      
+                                                         T ( RA  2 RB )C
+ Mediante los elementos utilizados a lo largo                1.44
+                                                    1
+ del curso del laboratorio de Diseño Digital,           ( RA  2 RB )C
+ tales como los mencionados en la                   1( RA  2 RB )C  1.44
+ introducción, como son, compuertas,
+ decodificadores, fotosensores, contadores,                         1.44
+                                                    ( RA  2 RB ) 
+ flip flops realizaremos un dispositivo                              C
+ contador, el cual desplegaremos su lectura a             1.44
+                                                    RA          2 RB
+ través de displays de 7 segmentos.                        C
+
+ DESARROLLO:                                          1.44
+                                                    RA       2 RB
+ Mediante el siguiente diagrama verifique              C
+ cada etapa para la realización de una cuenta            RB
+                                                    D            0.4
+ dada por su profesor.                                RA  2 RB
+                                                    RB  0.4( RA  2 RB )
+ Construcción de un monoestable 1[Hz]
+                                                    RB  0.4 RA  0.8RB
+                                                    0.2 RB  0.4 RA
+                                                    RB  2 RA
+
+                                                    RB  2 RA
+
+                                                    sustituyendo:
+
+                                                6
+UNAM, Facultad de Ingeniería                                               21/10/2017
+23:09:17
+Orozco Gómez Sergio Armando, Santiago Cruz Carlos           Titulo: Proyecto final
+________________________________________________________________________________
+__________
+       1.44
+  RA         2  2RA 
+        C
+       1.44
+  RA         4R A
+        C
+        1.44
+  3 RA 
+         C
+       1.44
+  RA 
+        3C
+
+
+        1.44
+  RA 
+         3C
+
+
+           1.44
+  RB  2
+            3C
+
+
+
+
+                                              RA=R1
+                                              RB=R2
+                                              C1=48[microF]
+                                              C2=0.001 microF]
+                                              Vcc=5[V]
+
+
+
+
+                                          7
+UNAM, Facultad de Ingeniería                                               21/10/2017
+23:09:17
+Orozco Gómez Sergio Armando, Santiago Cruz Carlos           Titulo: Proyecto final
+________________________________________________________________________________
+__________
+
+
+
+
+ CONCLUSIONES:
+
+
+
+       Logramos el conocimiento del funcionamiento de los fotosensores requeridos en la
+       practica, el cual deben de tener un contacto de visualización del emisor al receptor, al
+       interrumpir la señal de emisión, el foto receptor pasa a un estado alta impedancia, y la
+       señal tomada es la de alimentacion o Vcc.
+       El flip flop mantiene el estado anterior extraído de los sensores, ya que es un elemento
+       básico de memoria, tal como se trabajo durante el curso.
+       El dispositivo tri-estados nos da una habilitación del reloj construido hacia el contador
+       161.
+       Mediante el circuito integrado 555 se realizo el dispositivo contador, configurando en
+       modo astable con una frecuencia de 1 Hz.
+       Mediante lógica combinacional se detectaron ciertos valores para los cuales se debía de
+       reinicializar el contador 161.
+       A su vez, para su visualización, a la salida del contador se implemento un decodificador
+       BCD a 7 segmentos.
+
+
+ BIBLIOGRAFIA:
+
+ M MORRIS Mano, Diseño digital                      TK 7888.3
+                Prentice Hall,                      M 36318
+
+
+
+
+                                                8
+

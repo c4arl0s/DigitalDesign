@@ -1,0 +1,116 @@
+Diseño de contadores síncronos
+
+Paso1 Se determina el número de bits deseados ( FFs) y la
+secuencia de conteo que se necesita.
+
+C       A       B
+0       0       0
+0       0       1
+0       1       0
+0       1       1
+1       0       0
+0       0       0
+0       0       1
+
+                    Entradas                    Salidas
+        J               K      CLK                 Q
+        0               0                   Q0 (sin cambio)
+        1               0                           1
+        0               1                           0
+        1               1                    Q0_ (cambia
+                                                estado)
+
+Tabla de excitación:
+
+                       T       T+1      J             K
+    0       0          0        0       0             *
+    0       1          0        1       1             *
+    1       0          1        0       *             1
+    1       1          1        1       *             0
+
+Paso2 Se dibuja el diagrama de transición para preparar una
+tabla en a que se enlisten todos los estados (t y t+1).
+Paso3 Se usa el diagrama de transición para preparar una
+tabla en la que se enlisten todos los estados presentes y
+siguientes.
+
+     T             T+1
+ C   B    A    C    B    A   JC   KC   JB   KB   JA   KA
+ 0   0    0    0    0    1    0   *    0    *    1    *
+ 0   0    1    0    1    0    0   *    1    *    *    1
+ 0   1    0    0    1    1    0   *    *    0    1    *
+ 0   1    1    1    0    0    1   *    *    1    *    1
+ 1   0    0    0    0    0    *   1    0    *    0    *
+ 1   0    1    0    0    0    *   1    0    *    *    1
+ 1   1    0    0    0    0    *   1    *    1    0    *
+ 1   1    1    0    0    0    *   1    *    1    *    1
+
+Para poder entender mejor el procedimiento de llenado
+presento lo siguiente:
+Paso4 Por cada entrada J-K se agrega una columna. Para
+cada estado presente se indican los niveles requeridos en
+cada entrada J y K con el fin de producir el estado siguiente.
+
+Paso5 se diseñan los circuitos lógicos para generar los
+niveles requeridos en cada entrada J y K.
+
+OJO: para rellenar los mapas de K, se van vaciando los
+símbolos conforme están en la columna JC,KC ,JB,KB,JA,KA
+Excepto los últimos cuatro símbolos.
+
+       Jc
+A      0     1
+CB
+00     0     0
+01     0     1
+11     *     *
+10     *     *
+     Jc=BA
+
+       Kc
+ A     0     1
+CB
+00   * *
+01   * *
+11   1 1
+10   1 1
+ Kc=A+=1
+
+
+       JB
+A      0      1
+CB
+00      0     1
+01      *     *
+11      0     0
+10      *     *
+     JB=C_A
+
+
+       KB
+A      0      1
+CB
+00      *     *
+01      0     1
+11      1     1
+10      *     *
+     KB=C+A
+
+
+       JA
+A      0      1
+CB
+00     1      *
+01     1      *
+11     0      *
+10     0      *
+     JA=C_
+      JA
+A     0     1
+CB
+00     *    1
+01     *    1
+11     *    1
+10     *    1
+     JA=1
+

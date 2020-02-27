@@ -1,0 +1,184 @@
+                     UNIVERSIDAD NACIONAL
+                      AUTÓNOMA DE MÉXICO
+
+
+
+                    FACULTAD DE INGENIERIA
+
+
+                   Trabajo: PRACTICA 2 COMPUERTAS
+
+EQUIPO:
+                  SANTIAGO CRUZ CARLOS
+
+
+ASIGNATURA: DISEÑO DIGITAL
+
+                        GRUPO: LABORATORIO
+                            PRACTICA 2
+UNAM, Facultad de Ingeniería                                    21/10/2017 23:06:58
+Autor: Santiago Cruz Carlos                                      Titulo: PRACTICA 1
+________________________________________________________________________________
+__________
+         sábado, 21 de octubre de 2017, Ciudad Universitaria, México, DF
+
+
+
+
+                                         2
+UNAM, Facultad de Ingeniería                                    21/10/2017 23:06:58
+Autor: Santiago Cruz Carlos                                      Titulo: PRACTICA 1
+________________________________________________________________________________
+__________
+
+OBJETIVO: familiarizarse con algunos de los parámetros empleados en los circuitos
+integrados de la familia lógica TTL.
+
+Características de la familia lógica TTL
+
+Disipación de potencia
+
+1 Arme el circuito de la figura 1.
+
+
+
+
+Cada una de las compuertas de la figura 1 están funcionando como inversores, entonces
+para Vin=0, las compuertas 1 y 2 tendrán nivel alto y las otras compuertas tendrán un
+nivel bajo, esto es empleando lógica positiva. La corriente que suministra la fuente de
+poder será entonces la corriente promedio que necesita el circuito para funcionar.
+
+2 Mida la Icc promedio total para Vin= 0, del circuito de la figura 1; luego calcule la Icc
+promedio por compuerta y compárela con las especificaciones por los manuales TTL,
+indicando también el valor de esta ultima. Calcule la potencia promedio disipada por
+compuerta.
+
+                                                                I CC
+I CC  29 mA                                                           7.2 mA
+                                                                  4
+
+
+
+
+                                             3
+UNAM, Facultad de Ingeniería                                             21/10/2017 23:06:58
+Autor: Santiago Cruz Carlos                                                Titulo: PRACTICA 1
+________________________________________________________________________________
+__________
+3 ahora configure el circuito de la figura 1 de tal forma que todas las salidas sean `1'
+lógico. Mida la Icc total con salidas altas (IccH) y compárelas con las especificadas en los
+manuales TTL indicando el valor de ésta última.
+                                                                I CC
+ I CC  29 mA                                                          7.2 mA
+                                                                  4
+
+
+4 haga lo mismo que en inciso anterior sólo que ahora debe reconfigurar el circuito para
+que todas las salidas sean `0' lógico.
+
+I CC  33.56 mA                                                  I CC  8.39 mA
+
+
+
+
+II tiempo de retardo de propagación
+
+   1. alambre el siguiente circuito:
+
+
+
+
+Una vez que se ha conectado la salida de la última compuerta a la entrada de la primera
+compuerta, un frente de onda es iniciado. Dicho frente de onda es generado por si
+mismo, es decir, el circuito oscila.
+  2. conecte el punto x a la entrada vertical del osciloscopio. Observe y copie la señal
+     oscilatoria que aparece
+  3. mida el periodo de oscilación de la señal observada y calcule el tiempo de retardo
+     de propagación tpd utilizando la siguiente formula:
+
+
+T: periodo en segundos
+N: numero de compuertas en cascada
+
+tpd = T / (2N)
+
+T=0.2 (cuadros) (0.2 s/ cuadro)
+T= 0.04 [s] / 2 (7)
+N= 7
+Tpd= 2.85 [ns]
+                                             4
+UNAM, Facultad de Ingeniería                                    21/10/2017 23:06:58
+Autor: Santiago Cruz Carlos                                      Titulo: PRACTICA 1
+________________________________________________________________________________
+__________
+
+El tpd teorico va de 9 a 10 [ns], para Vcc= 5V y CL=15 [pF]
+
+
+   4. que sucedería si el numero de compuertas en cascada de la figura 2 fuese par ¿
+
+Explique la respuesta.
+
+
+   5. que sucede con el periodo de la señal oscilatoria si el número impar de las
+      compuertas es disminuido ¿?
+
+
+
+El período y la frecuencia no cambia; pero el tiempo de retardo disminuye.
+
+
+III curva de transferencia característica (voltaje de salida vs voltaje de
+entrada)
+
+   1. arme el circuito de la figura 3.
+
+
+
+
+ Aplique un voltaje de entrada senoidal en el punto A de 5 Vpp de amplitud y frecuencia
+                                          de 1KHz
+   2. obtenga la curva de transferencia de la compuerta TTL conectando el punto A al
+      barrido horizontal del osciloscopio y el punto B al barrido vertical del mismo. Copie
+      la curva de transferencia que aparezca y acótela. Compárela con la que da el
+      fabricante
+
+
+
+
+0.5 [V/div]
+
+
+
+
+                                             5
+UNAM, Facultad de Ingeniería                                    21/10/2017 23:06:58
+Autor: Santiago Cruz Carlos                                      Titulo: PRACTICA 1
+________________________________________________________________________________
+__________
+
+
+
+CONCLUSIONES:
+
+
+     Valoramos la corriente que consume cada circuito integrado, resultando en una
+     corriente parecida a la de la hoja de especificaciones, sobrepasando un poco estos
+     valores.
+     El tiempo de propagación no resulto parecido al leído en nuestra hoja de
+     especificaciones mas sin embargo este valor es para una CL = 15 [pF], la cual esta
+     condición no fue tratada en nuestras mediciones.
+     De nuestras clases de teoría logramos comprobar el uso de la compuerta nand, ya
+     que con esta podemos hacer inversores, conectando la señal a ambas terminales
+     de entrada.
+     Interpretando la curva característica de tensión de entrada contra tensión de
+     salida, vemos que para señales menores a una cierta tensión, vemos que la
+     respuesta es de 0 [V], mas sin embargo, hay un intervalo de tensiones, para la
+     cual nuestra tensión de salida es constante, mas alla de ese intervalo la salida es
+     nuevamente de 0 [V].
+
+
+
+
+                                           6
+

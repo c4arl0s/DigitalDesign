@@ -1,0 +1,143 @@
+           UNIVERSIDAD NACIONAL
+            AUTÓNOMA DE MÉXICO
+
+
+              FACULTAD DE INGENIERIA
+
+
+Trabajo: PRACTICA 4
+
+EQUIPO:
+                 SANTIAGO CRUZ CARLOS
+
+
+ASIGNATURA: LAB. DISEÑO DIGITAL
+
+GRUPO:
+UNAM, Facultad de Ingeniería                                       21/10/2017 23:07:40
+Autor: Santiago Cruz Carlos                                Titulo:
+________________________________________________________________________________
+__________
+           sábado, 21 de octubre de 2017, Ciudad Universitaria, México, DF
+
+
+
+
+                                          2
+UNAM, Facultad de Ingeniería                                       21/10/2017 23:07:40
+Autor: Santiago Cruz Carlos                                Titulo:
+________________________________________________________________________________
+__________
+                       Circuitos lógicos TTL con salida Totem-pole
+
+  1. En el siguiente circuito: colector abierto.
+
+
+
+
+         Conecte un uno lógico a las entradas A y B y mida la tensión a la salida.
+         Ahora conecte un cero lógico a una de las entradas y vuelva a medir la tensión
+          de salida.
+  2. Haga lo mismo del inciso 1 para un circuito 3 estados. Estando habilitada y
+     deshabilitada la línea de control. Describa lo que observo (explique).
+
+
+
+
+  3. Determine experimentalmente la corriente necesaria para que un led encienda.
+  4. Implemente un OR alambrado, utilizando solo inversores.
+  5. Calcule el valor de la resistencia limitadora (PULL UP) que se necesita para monitorear
+     la salida del OR alambrado del circuito anterior.
+  6. Determine si la salida puede ser monitoreada con una lámpara incandescente (foco
+     gota 1.5V p. ej.)
+                                  _____ _____ _____ _____
+  7. Implemente la función F  AB CD  EF GH con circuitos tótem pole.
+  8. Implemente la función del inciso 7 con circuitos colector abierto. Comente sus
+     observaciones.
+  9. Implemente una línea de transmisión (BUS) de tal forma que por la misma línea se
+     introduzcan los datos, y se obtenga la respuesta.
+
+
+
+
+                                                   3
+UNAM, Facultad de Ingeniería                                       21/10/2017 23:07:40
+Autor: Santiago Cruz Carlos                                Titulo:
+________________________________________________________________________________
+__________
+
+
+
+
+un codificador óptico de posición (shaft-encoder) con 4 líneas de salida, indica la posición de
+su eje, en pasos de 30 grados, como se indica en la siguiente tabla, donde E3,E2,E1 y E0
+son variables verificadas-bajas.
+
+
+Posición dej eje   E3   E2   E1   E0   A   B
+0-29               0    0    1    1    0   0
+30-59              0    0    1    0    0   0
+60-89              0    1    1    0    0   0
+90-119             0    1    1    1    0   1
+120-149            0    1    0    1    0   1
+159-179            0    1    0    0    0   1
+180-209            1    1    0    0    1   0
+210-239            1    1    0    1    1   0
+240-269            1    1    1    1    1   0
+270-299            1    1    1    0    1   1
+300-329            1    0    1    0    1   1
+330-359            1    0    1    1    1   1
+
+Diseñe un circuito combinacional que indique en binario el numero del cuadrante en que se
+encuentra (cuadrante 0-89, 90-179, etc.) Las líneas de salida de este circuito (b1,b0) deben
+ser verificadas ­bajas )
+
+ E3=A
+
+E3E2           00 01 11 10
+E1E0
+00
+01             1    1   1
+11             1             1
+10                           1
+
+
+                                               4
+UNAM, Facultad de Ingeniería                                       21/10/2017 23:07:40
+Autor: Santiago Cruz Carlos                                Titulo:
+________________________________________________________________________________
+__________
+B  E2 E1E0  E3 E2 E0  E3 E1E0
+
+
+
+
+                                          5
+UNAM, Facultad de Ingeniería                                       21/10/2017 23:07:40
+Autor: Santiago Cruz Carlos                                Titulo:
+________________________________________________________________________________
+__________
+Conclusiones
+
+   Comprobamos la utilidad de los circuitos de colector abierto, conectando sus
+   salidas a una misma entrada, esto es debido al transistor de colector abierto
+   que tienen en su salida. Por lo que no pueden hacer corto y las salidas son alta
+   y una baja.
+
+   Comprobamos la utilidad del circuito tres estados la cual, como su nombre
+   indica tiene tres formas de operación, cuando la línea de control esta
+   habilitada (conectada a tierra) el circuito se comporta como un circuito totem-
+   pole normal. Cuando la línea de control se deshabilita, la salida simplemente
+   presenta una alta impedancia (no proporciona y absorbe corriente) por lo que
+   pueden estar dos salidas conectadas entre sí. Sin embargo debemos tener
+   cuidado de no habilitar a la vez dos o mas salidas conectadas al mismo punto.
+
+   Otro de los puntos analizados fue la facilidad de operación de los circuitos de
+   colector abierto, ya que ahorramos compuertas a la hora de implementar un
+   circuito con salida de colector abierto con respecto a tótem pole.
+
+
+
+
+                                          6
+

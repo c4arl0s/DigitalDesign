@@ -1,0 +1,23 @@
+Flip-flop S-C Sincronizado por Reloj (Synchronized for
+Clock)
+
+A continuación se muestra un flip-flop S-C sincronizado
+por reloj, que se dispara por el borde de transición positiva
+de la señal de reloj. Esto significa que el FF puede cambiar
+estados sólo cuando una señal aplicada a su entrada de reloj
+hace una transición de cero a uno. Las entradas S y C
+controlan el estado del FF de la misma manera en que se
+describió antes para el latch de compuerta NOR; pero el FF
+no responde a estas entradas hasta que ocurre un TPP
+(Transición con Pendiente Positiva) de la señal de reloj.
+
+
+
+
+            Entradas                           Salidas
+    S           C           CLK                   Q
+    0           0                          Q0 (sin cambio)
+    1           0                                  1
+    0           1                                  0
+    1           1                             Ambigua
+

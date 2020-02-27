@@ -1,0 +1,253 @@
+          UNIVERSIDAD NACIONAL
+           AUTÓNOMA DE MÉXICO
+
+
+             FACULTAD DE INGENIERIA
+
+
+                       Titulo: PRACTICA 5
+
+
+EQUIPO:
+                Orozco Gómez Sergio Armando
+                    Santiago Cruz Carlos
+
+
+
+          ASIGNATURA: Laboratorio de Diseño Digital
+
+                           GRUPO:
+UNAM, Facultad de Ingeniería                                               21/10/2017
+23:08:48
+Orozco Gómez Sergio Armando, Santiago Cruz Carlos           Titulo: Practica 6
+________________________________________________________________________________
+__________
+            sábado, 21 de octubre de 2017, Ciudad Universitaria, México, DF
+OBJETIVO:
+
+Conocer las características de los Flip Flops y de los contadores integrados
+
+INTRODUCCION:
+
+Flip flop
+
+El elemento más importante de la memoria es el flip flop, el cual esta constituido
+por un ensamble de compuertas lógicas. Aunque una compuerta lógica no puede por
+si misma no tiene capacidad para almacenar, se pueden conectar varias a la vez de
+tal manera que permitan el almacenamiento para la información.
+
+NAND LATCH
+
+El circuito FF más básico se puede construir a base de dos compuertas NAND o dos
+compuertas NOR.
+
+
+
+
+SET=CLEAR=1. Esta condición es el estado normal de reposo y no tiene efecto en el
+estado de salida. Las salidas Q y Q_ permanecerán en el estado que tenían antes de
+esta condición de entrada.
+SET=0, CLEAR=1. esto siempre, causará que la salida pase a alto Q=1, donde
+permanecerá incluso después de que SET retorne a ALTO. A esto se le llama
+establecimiento del latch.
+SET=1, CLEAR=0. Esto siempre producirá el estado Q=0, en el cual la salida
+permanecerá incluso después que BORRAR retorne a ALTO. A esto se le llama
+establecimiento o reestablecimiento del latch.
+SET=CLEAR=0. Esta condición intenta establecer y borrar el latch al mismo tiempo y
+puede producir resultados ambiguos. No se debe emplear.
+
+                                           2
+UNAM, Facultad de Ingeniería                                               21/10/2017
+23:08:48
+Orozco Gómez Sergio Armando, Santiago Cruz Carlos           Titulo: Practica 6
+________________________________________________________________________________
+__________
+
+
+
+
+NOR LATCH
+
+
+
+
+FLIP FLOP D (SYNCHRONIZED FOR CLOCK)
+
+ A diferencia de los flip flops S-C y J-K, este FF sólo tiene una entrada síncrona de
+control, D, que significa Datos. Q pasará al mismo estado que este presente en la
+entrada D cuando ocurra una TPP en CLK.
+
+En otras palabras, el nivel presente en D se almacenará en el FF en el instante en
+que ocurre la TTP.
+
+
+
+
+         Entradas                         Salidas
+     D              CLK                      Q
+     0                                       0
+     1                                       1
+
+Simulación en Circuit Maker incompleta:
+                                           3
+UNAM, Facultad de Ingeniería                                               21/10/2017
+23:08:48
+Orozco Gómez Sergio Armando, Santiago Cruz Carlos           Titulo: Practica 6
+________________________________________________________________________________
+__________
+
+
+
+
+TRANSFERENCIA DE DATOS PARALELA
+
+En este punto quizá usted se pregunte cual es la utilidad del flip flop D, puesto que
+según parece la salida Q es la misma que la entrada D. No del todo, recuerde Q
+adopta el valor de D solo en ciertos momentos, y por lo tanto no es idéntica a D.
+
+En la mayoría de las aplicaciones del FF D la salida Q debe adoptar el valor en su
+entrada D sólo en instantes definidos.
+
+Un ejemplo de esto se ilustra en la figura siguiente:
+
+                                                    D    Q
+                                                         _
+                                DS1                 CP   Q
+                               Data 8
+                                Seq 7               D    Q
+                                    6                    _
+                                    5               CP   Q
+                                    4
+                                    3
+                              CP1   2               D    Q
+                              CP2   1       V1           _
+                                                    CP   Q
+                                           CP1 Q1
+                                           CP2 Q2
+
+
+
+
+Digamos que el data seq es un circuito lógico combinacional, las salidas 8, 7, 6 se
+transferirían a Q1, Q2, Q3 del FF para su almacenamiento.
+                                           4
+UNAM, Facultad de Ingeniería                                               21/10/2017
+23:08:48
+Orozco Gómez Sergio Armando, Santiago Cruz Carlos           Titulo: Practica 6
+________________________________________________________________________________
+__________
+
+Usando los FF D, los niveles presentes en 8, 7, 6 se transferirán a Q1, Q2, Q3,
+respectivamente al aplicar un pulso de TRANSFERENCIA a las entradas comunes CLK.
+Los FFs pueden almacenar estos valores para su procesamiento siguiente.
+
+Este es un ejemplo de transferencia paralela de datos binarios, los bits 8, 7, 6 se
+transfieren simultáneamente.
+
+
+
+FLIP-FLOP J-K SINCRONIZADO POR RELOJ (SYNCHRONIZED FOR CLOCK)
+
+Las entradas J y K controlan el estado del FF de la misma manera en que las
+entradas S y C controlan el FF S-C, excepto por una diferencia importante: la
+condición J=K=1 no es ambigua. Para la condición, 1,1, el FF siempre pasará a su
+estado opuesto cuando se lleve acabo la transición positiva de la señal de reloj. A
+esta operación se le llama modo de cambios de estados. En este modo, si J y K se
+dejan en ALTO, el FF cambiará estados (conmutará) para cada TTP de reloj.
+
+
+
+
+                Entradas                               Salidas
+     J             K            CLK                       Q
+     0             0                              Q0 (sin cambio)
+     1             0                                      1
+     0             1                                      0
+     1             1                            Q0_ (cambia estado)
+
+
+FLIP-FLOP S-C SINCRONIZADO POR RELOJ (SYNCHRONIZED FOR CLOCK)
+
+A continuación se muestra un flip-flop S-C sincronizado por reloj, que se dispara
+por el borde de transición positiva de la señal de reloj. Esto significa que el FF
+                                          5
+UNAM, Facultad de Ingeniería                                               21/10/2017
+23:08:48
+Orozco Gómez Sergio Armando, Santiago Cruz Carlos           Titulo: Practica 6
+________________________________________________________________________________
+__________
+puede cambiar estados sólo cuando una señal aplicada a su entrada de reloj hace
+una transición de cero a uno. Las entradas S y C controlan el estado del FF de la
+misma manera en que se describió antes para el latch de compuerta NOR; pero el
+FF no responde a estas entradas hasta que ocurre un TPP (Transición con
+Pendiente Positiva) de la señal de reloj.
+
+
+
+
+                  Entradas                                       Salidas
+     S               C                CLK                           Q
+     0               0                                      Q0 (sin cambio)
+     1               0                                              1
+     0               1                                              0
+     1               1                                          Ambigua
+
+DESARROLLO:
+
+  1. Conecte la polarización y tierra del circuito integrado (compruebe la siguiente tabla de verdad).
+
+                        CLEAR RELOJ                J    K    SALIDA
+                        alto  Bajo-alto-           Bajo Bajo Qo   Qo_
+                              bajo
+                        alto  Bajo-alto-           Alto   Bajo Alto    Bajo
+                              bajo
+                        alto  Bajo-alto-           Bajo Alto    Bajo Alto
+                              bajo
+                        alto  Bajo-alto-           Alto   Bajo Qo_     Qo
+                              bajo
+
+  2. Conecte una señal de onda cuadra de 0 a 5[V] de frecuencia a 1 [KHz] a la entrada del reloj
+     del FF.
+  3. Conecte un uno lógico a la entrada J y K del FF.
+  4. Conecte en el osciloscopio las señales reloj y Q. ¿qué relación hay entre ellas? Copie las
+     formas de onda observadas.
+
+                                                 6
+UNAM, Facultad de Ingeniería                                                               21/10/2017
+23:08:48
+Orozco Gómez Sergio Armando, Santiago Cruz Carlos                           Titulo: Practica 6
+________________________________________________________________________________
+__________
+   5. Observe en el osciloscopio las señales reloj y Q. ¿qué relación hay entre ellas? Copie las
+      formas de onda observadas. Aumente la frecuencia de la onda cuadrada, observe los efectos,
+      explíquelos y anote el efecto de frecuencia.
+   6. Conecte los FF del circuito integrado para tener ahora un divisor de frecuencia entre cuatro.
+      Copie las formas de onda observadas para una frecuencia de reloj de 1 [KHz]. Aumente la
+      frecuencia hasta que se observe distorsion. ¿Dónde es mayor la distorsion, en la salida del
+      divisor entre dos o la salida del divisor entre 4?
+
+
+
+
+CONCLUSIONES:
+
+      Logramos comprobar la tabla de verdad del Flip Flop analizado.
+      Comprobamos que el flip flop es la mínima unidad de almacenamiento.
+      El flip flor tiene ademas una salida negada, así como dependiendo del diseño, esta hace su
+      transición por flanco de baja o flanco de subida.
+      El divisor entre 4 se distorsiona más que el de divisor entre 2, debido al ancho de banda del
+      Flip Flop.
+
+
+
+
+BIBLIOGRAFIA:
+
+  M MORRIS Mano, Diseño digital                       TK 7888.3
+                 Prentice Hall,                       M 36318
+
+
+
+
+                                                  7
+

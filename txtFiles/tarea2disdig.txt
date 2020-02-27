@@ -1,0 +1,133 @@
+UNAM, FACULTAD DE INGENIERÍA                                SANTIAGO CRUZ
+CARLOS
+DISEÑO DIGITAL, TAREA 2                                             30-AGO-06
+
+                   UNIVERSIDAD NACIONAL
+                    AUTÓNOMA DE MÉXICO
+
+
+                        FACULTAD DE INGENIERIA
+
+
+                        Trabajo: Códigos Alfanuméricos
+
+      EQUIPO:
+                                 SANTIAGO CRUZ CARLOS
+
+
+                               ASIGNATURA: Diseño Digital
+
+      GRUPO:
+
+
+
+
+       Fecha de creación 30/08/06 14:05 O8/p8, CIUDAD UNIVERSITARIA
+                                Diseño digital - 1 de 4
+UNAM, FACULTAD DE INGENIERÍA                                         SANTIAGO CRUZ
+CARLOS
+DISEÑO DIGITAL, TAREA 2                                                       30-AGO-06
+                               CODIGOS ALFANUMERICOS
+
+En adición a los datos numéricos, una computadora debe ser capaz de manejar
+información no numérica. En otras palabras, una computadora debe reconocer código
+que representa letras del alfabeto, puntuaciones, y otros caracteres especiales así como
+números. Estos códigos son llamados códigos alfanuméricos. Un código alfanumérico
+completo incluiría las 26 letras minúsculas, 26 letras mayúsculas, 10 dígitos decimales, 7
+marcas de puntuación y cualesquier otros 20 a 40 caracteres. Tales como +,-,%,# y así
+sucesivamente. Podemos decir que un código alfanumérico representa varios caracteres
+y funciones que están contempladas en un teclado estándar.
+
+                                      CODIGO ASCII
+
+El código alfanumérico mas usado, el American Estándar Code for Information
+Interchange (ASCII), es usado en la mayoría de las microcomputadoras y
+minicomputadoras, y en la mayoría de mainframes. El código ASCII es un código de 7
+bits, y así tiene grupos de 2 7=128. Esto es más que suficiente para representar todos los
+caracteres del teclado así como una lista parcial de funciones de control tales como
+<RETURN> y <LINEFEED>. La siguiente tabla muestra una lista parcial del código ASCII y
+en adición se muestra su equivalente en octal y hexadecimal.
+
+                          Carácter      ASCII 7 bit Octal Hex
+                          A             100 0001     101 41
+                          B             100 0010     102 42
+                          C             100 0011     103 43
+                          D             100 0100     104 44
+                          E             100 0101     105 45
+                          F             100 0110     106 46
+                          G             100 0111     107 47
+                          H             100 1000     110 48
+                          I             100 1001     111 49
+                          J             100 1010     112 4ª
+                          K             100 1011     113 4B
+                          L             100 1100     114 4C
+                          M             100 1101     115 4D
+                          N             100 1110     116 4E
+                          O             100 1111     117 4F
+                          P             101 0000     120 50
+                          Q             101 0001     121 51
+                          R             101 0010     122 52
+                          S             101 0011     123 53
+                          T             101 0100     124 54
+                          U             101 0101     125 55
+                          V             101 0110     126 56
+                          W             101 0111     127 57
+                          X             101 1000     130 58
+
+                                Diseño digital - 2 de 4
+UNAM, FACULTAD DE INGENIERÍA                                     SANTIAGO CRUZ
+CARLOS
+DISEÑO DIGITAL, TAREA 2                                                  30-AGO-06
+                          Y             101   1001    131   59
+                          Z             101   1010    132   5ª
+                          0             011   0000     60   30
+                          1             011   0001     61   31
+                          2             011   0010     62   32
+                          3             011   0011     63   33
+                          4             011   0100     64   34
+                          5             011   0101     65   35
+                          6             011   0110     66   36
+                          7             011   0111     67   37
+                          8             011   1000     70   38
+                          9             011   1001     71   39
+                          BLANK         010   0000   040    20
+                          .             010   1110   056    2E
+                          (             010   1000   050    28
+                          +             010   1011   053    2B
+                          $             010   0100   044    24
+                          *             010   1010   052    2ª
+                          )             010   1001   051    29
+                          -             010   1101   055    2D
+                          /             010   1111   057    2F
+                          ,             010   1100   054    2C
+                          =             011   1101   075    3D
+                          <RETURN>      000   1101   015    0D
+                          <LINEFEED>    000   1010   012    0A
+
+El código ASCII es usado para transferir información alfanumérica entre una
+computadora y dispositivos de entrada/salida tales como terminales de video o
+impresoras. Una computadora también lo usa internamente para almacenar
+información.
+
+
+
+
+BIBLIOGRAFIA
+
+J TOCCI Ronald, Digital Systems Principles and applications,
+                     6a Ed. Prentice Hall , 1995
+TK7868
+D5
+T62
+
+                                Diseño digital - 3 de 4
+UNAM, FACULTAD DE INGENIERÍA                             SANTIAGO CRUZ
+CARLOS
+DISEÑO DIGITAL, TAREA 2                                          30-AGO-06
+1995
+
+
+
+
+                               Diseño digital - 4 de 4
+

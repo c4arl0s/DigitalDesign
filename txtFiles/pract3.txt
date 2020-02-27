@@ -1,0 +1,170 @@
+           UNIVERSIDAD NACIONAL
+            AUTÓNOMA DE MÉXICO
+
+
+              FACULTAD DE INGENIERIA
+
+
+Trabajo: PRACTICA 3
+
+EQUIPO:
+                 SANTIAGO CRUZ CARLOS
+
+
+ASIGNATURA: LAB. DISEÑO DIGITAL
+
+GRUPO:
+UNAM, Facultad de Ingeniería                                       21/10/2017 23:07:30
+Autor: Santiago Cruz Carlos                                Titulo:
+________________________________________________________________________________
+__________
+           sábado, 21 de octubre de 2017, Ciudad Universitaria, México, DF
+
+
+
+
+                                          2
+UNAM, Facultad de Ingeniería                                       21/10/2017 23:07:30
+Autor: Santiago Cruz Carlos                                Titulo:
+________________________________________________________________________________
+__________
+
+OBJETIVO: familiarizarse con algunos de los parámetros empleados en los circuitos
+integrados de la familia lógica CMOS y compararlos con los de la familia TTL.
+
+Características de la familia lógica CMOS
+
+1.- Grafique la tensión de salida contra la tensión de entrada de la compuerta NAND
+CMOS 4011 haciendo vi mayor o igual que cero menor o igual que 5 [V] en el
+siguiente circuito:
+
+
+
+
+Vi[V]   Vs[V]
+  0     0.334
+ 0.5    0.334
+ 1.0    0.334
+ 1.5    0.343
+ 2.0      0
+ 2.5      0
+ 3.0      0
+ 3.5      0
+ 4.0      0
+ 4.5      0
+ 5.0      0
+
+
+
+
+                                            3
+UNAM, Facultad de Ingeniería                                       21/10/2017 23:07:30
+Autor: Santiago Cruz Carlos                                Titulo:
+________________________________________________________________________________
+__________
+2.- En el siguiente circuito con las entradas en la compuerta 4011 juntas y `1' lógico.
+¿qué tantas compuertas TTL pueden ser conectadas a la salida de la 4011 antes de
+que el LED se apague ?
+
+
+
+
+3.- Alambre el siguiente circuito:
+
+
+
+
+dibuje la forma de onda que aparezca en el osciloscopio acortándola.
+
+
+
+
+T=0.2 cuadros (0.2 micros/cuadro)= 480 [ns]
+F=2.08 [MHz]
+                                         4
+UNAM, Facultad de Ingeniería                                       21/10/2017 23:07:30
+Autor: Santiago Cruz Carlos                                Titulo:
+________________________________________________________________________________
+__________
+4.- Repita el punto No. 1 pero ahora con Vcc=15[V], y para   0  Vin  15
+
+
+
+
+5.- Construya el circuito de la siguiente figura:
+
+
+
+
+Con el generador de pulsos puesto para una onda cuadrada de 0.6 [V], mida la salida
+en el punto e (0 o 1)
+
+Vi[V]   Vo[V]
+0.6     1
+0.8     1
+1       1
+2       1
+2.4     1
+2.6     0
+
+
+
+
+Repita lo anterior para ondas cuadradas de 0.8 [V] y 1[V]
+Repita para 2 V y 2.4 V
+                                            5
+UNAM, Facultad de Ingeniería                                       21/10/2017 23:07:30
+Autor: Santiago Cruz Carlos                                Titulo:
+________________________________________________________________________________
+__________
+
+6.- Construya el circuito de la siguiente figura:
+
+
+
+
+repita los pasos del punto 5
+
+
+Vi[V]   Vo[V]
+0.6     1
+0.8     1
+1       1
+2       0
+2.4     0
+2.6     0
+
+7.- Del inciso 5 y 6 ¿ qué puedes deducir de los márgenes de ruido para CMOS y TTL y
+¿ cuáles son las ventajas y desventajas de CMOS contra TTL ?
+
+   Es mas inmune al ruido la CMOS
+   CMOS es difícil de manejar, ya que son muy sensibles a las corrientes estáticas
+   y se pueden dañar.
+   CMOS maneja mas niveles de tension, desde 3V hasta 15V
+
+
+
+
+                                            6
+UNAM, Facultad de Ingeniería                                       21/10/2017 23:07:30
+Autor: Santiago Cruz Carlos                                Titulo:
+________________________________________________________________________________
+__________
+CONCLUSIONES:
+
+
+Mediante la práctica llegamos a las siguientes conclusiones:
+
+
+  1. Como vimos en el experimento del generador, la frecuencia fue de 2[MHZ],
+     este con respecto al experimento de la practica anterior fue menor, es decir,
+     el ancho de banda es menor, con respecto al TTL.
+  2. Es más inmune al ruido el CMOS que el TTL
+  3. Niveles de tensión de alimentacion mayores los del TTL que del CMOS.
+  4. Cmos varia de 3 a 15 [V], TTL solo 5[V]
+
+
+
+
+                                          7
+

@@ -1,0 +1,172 @@
+8. Conversión de analógica a digital.
+
+Un convertidor analógico a digital toma un voltaje analógico
+de entrada y después de cierto tiempo produce un código
+digital de salida que representa la entrada analógica. El
+proceso de conversión A/D es mas complejo y tardado que el
+proceso D/A y se han desarrollado y empleado muchos
+métodos. Se examinaran varios de estos con más detalles,
+aunque quizás nunca sea necesario diseñar o construir
+circuitos ADC. Sin embargo, las técnicas que se usan
+proporcionan una visión de cuales son los factores que
+determinan el desempeño del ADC.
+
+En varios tipos importantes   de ADC se utilizan DAC como
+parte de su circuitería.
+
+A continuación se muestra un diagrama general de bloques
+para esta clase de ADC.
+
+
+
+
+La sincronización para la operación se proporciona por medio
+de la señal de entrada de reloj (CLK). La unidad de control
+contiene la circuitería lógica    para generar la secuencia
+adecuada de operaciones en respuesta al COMANDO DE
+INICIA, que comienza el proceso de conversión. El
+comparador del amplificador operacional tiene dos entradas
+analógicas y una salida digital que conmuta estados,
+dependiendo de cuál entrada sea mayor.
+
+  1. El pulso de comando INICIA comienza la operación.
+  2. En la frecuencia determinada por el reloj, la unidad de
+     control modifica de manera continua el número binario
+     que está almacenado en el registro.
+  3. El número binario en el registro se convierte a un voltaje
+     analógico, Vax, mediante el DAC.
+  4. El comparador compara Vax, con la entrada analógica
+     Va. Siempre que Vax < Va, la salida del comparador
+     permanece en ALTO. Cuando Vax excede Va cuando
+     menos por una cantidad igual a VT (voltaje de umbral), la
+     salida del comparador pasa a BAJO y detiene el proceso
+     de modificación del número del registro. En este punto,
+     Vax es un valor muy aproximado a Va. El numero digital
+     en el registro, que es equivalente de Vax, también es el
+     equivalente digital aproximado de Va, dentro de la
+     resolución y precisión del sistema.
+  5. La lógica de control activa la señal de fin de conversión,
+     FDC, cuando esta se completa.
+
+ADC de rampa digital.
+
+En una de las versiones mas simples del ADC de la figura
+pasada, se usa un contador binario como registro y permite
+que el reloj incremente el contador un escalón a la vez hasta
+VaxVa. Se llama ADC de rampa digital por que la forma de
+onda en Vax es una rampa (en realidad una escalera) escalón
+por escalón como la que se muestra en la figura siguiente:
+También se le denomina ADC tipo contador.
+
+En la siguiente figura se muestra el diagrama de un ADC de
+rampa digital, contiene un contador, un DAC, un comparador
+analógico y una compuerta AND de control. La salida del
+contador sirve como la señal activa en BAJO de fin de
+conversión neg(FDC). Si suponemos que Va, el voltaje
+analógico que será convertido, es positivo, la operación es la
+siguiente.
+
+   Se aplica un pulso de INICIO para restablecer el
+   contador a 0. El estado ALTO de INICIO también inhibe
+   el escalón de los pulsos de reloj por la compuerta AND
+   hacia el contador.
+ Con ceros en su entrada, la salida del DAC será VAX.=[V]
+ Como VA> VAX la salida del comparador, neg(FDC), será
+ ALTA.
+ Cuando INICIO retorna a BAJO, la compuerta AND se
+ habilita y los pulsos de reloj pasan hacia el contador.
+ A medida que el contador avanza, la salida del DAC
+ VAX.se incrementa un escalón a la vez, como se muestra
+ en la figura anterior.
+ Esto continúa hasta que VAX. Alcanza un escalón que
+ excede VA en una cantidad igual o mayor que VT
+ (comúnmente de 10 a 100 [microA]). En este punto,
+ neg(FDC) pasará a BAJO e inhibirá el flujo de pulsos
+ hacia el contador y entonces éste dejará de contar.
+ Ahora el proceso de conversión esta completo de
+ acuerdo con lo señalado mediante la transición de ALTO
+ a BAJO en neg(FDC) y el contenido del contador es la
+ representación de VA.
+ El contador mantendrá el valor digital hasta que el
+ siguiente pulso de INICIO comience una nueva
+ conversión.
+Ejemplo:
+
+Suponga los siguientes valores para el DAC de la figura de
+explicación:
+Clk=1[MHz]
+VT=0.1[mV]
+DAC salida a plena escala de 10.23[V]
+10 bits de entrada
+determine: a) el equivalente digital obtenido por Va=3.728[V]
+b)tiempo de conversión, c) la resolución de este convertidor.
+
+Solución:
+  a) el DAC tiene entrada de 10 bits y una salida a plena
+     escala de 10.23 [V]. Así, el número total posible de
+     escalones es 210-1=1023 y por lo tanto el tamaño de
+     escalón es:
+  10.23/1023=10[mV]
+  esto significa que Vax se incrementa en escaloes de
+  10[mV] cuando el contador cuenta hacia arriba desde 0.
+  Como Va=3.728V y VT=0.1mV, Vax debe alcanzar 3.728V
+  o más antes que el comparador cambie a BAJO. Esto
+  requiere que:
+  3.7281V/10[mV]=372.81=373 escalones
+  Entonces, a final de la conversión el contador retendrá el
+  equivalente binario de 373, que es 0.101110101. Este es el
+  equivalente digital deseado de Va=3.728[V], producido por
+  este DAC.
+
+  b) Se requirieron 373 escalones para completar la
+  conversión. Así, ocurrieron 373 pulsos de reloj a la
+  frecuencia de uno por microsegundo. Esto da un tiempo
+  total de conversión de 373[microseg].
+
+  c) La resolución de este convertidor es igual al tamaño del
+     escalón del DAC, que es de 10 [mV]. Este porcentaje es
+     1/1023x100%=0.1%
+Resolución y exactitud del A/D
+
+Es importante comprender los errores asociados cuando se
+lleva acabo cualquier clase de medición. Una fuente de error
+inevitable en el método de rampa digital es que el tamaño del
+escalón o resolución del DAC interno es la unidad menor de
+medición. Imagine tratar de medir las estaturas del jugadores
+de básquetbol haciéndoles que se paren junto a una escalera
+con escalones de 12 pulgadas y asignándoles la altura del
+primer escalón que sobrepase su cabeza. Cualquier jugador
+con una altura de más de 6 pies sería medido con una altura
+de 7 pies. Del mismo modo, el voltaje de salida de Vax es una
+forma de onda en escalera que sube en escalones discretos
+hasta que excede el voltaje de entrada, Va. Si se reduce el
+tamaño del escalón se puede aminorar el error potencial, pero
+siempre habrá una diferencia entre la cantidad real
+(analógica) y el valor digital asignado. A esto se le llama
+error de cuantización. Así Vax es una aproximación del
+valor de Va y lo mejor que podemos esperar es que Vax esté
+dentro de 10 mV de Va si la resolución (tamaño del escalón)
+es de 10 mV. Este error de cuantización que se puede reducir
+incrementando el numero de bits en el contador y en el DAC,
+a veces se especifica como un error de +1 LSB, lo que indica
+que el resultado podría estar errado hasta por un valor igual
+al factor de ponderación del LSB. En el problema 10-28
+veremos cómo se puede modificar este error de cuantización
+de modo que sea +-½ LSB, la cual es una situación muy
+común.
+
+Ejemplo 10-14
+
+Tiempo de conversión tc
+
+La desventaja principal del método de rampa digital es que en
+esencia el tiempo de conversión se incrementa al doble por
+cada bit que se agrega al contador, de modo que la resolución
+se puede mejorar sólo a costa de un tc mayor. Lo anterior
+hace que este tipo de ADC sea inadecuado para aplicaciones
+en las que se deben realizar conversiones repetitivas de A/D
+de una señal analógica que cambia rápidamente. Sin
+embargo, para las aplicaciones de baja velocidad la relativa
+sencillez del convertidor de rampa digital es una ventaja
+sobre los ADCs de mayor velocidad y complejidad.
+

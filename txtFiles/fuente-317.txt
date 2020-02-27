@@ -1,0 +1,210 @@
+           UNIVERSIDAD NACIONAL
+            AUTÓNOMA DE MÉXICO
+
+
+              FACULTAD DE INGENIERIA
+
+
+          Trabajo: Fuente de Alimentación Variable
+
+EQUIPO:
+                 SANTIAGO CRUZ CARLOS
+
+
+ASIGNATURA: LAB. DISEÑO DIGITAL
+
+                     GRUPO: PRACTICA 1
+UNAM, Facultad de Ingeniería                                       21/10/2017 23:05:44
+      Autor: Santiago Cruz Carlos                           Titulo: Fuente de Alimentación Variable
+
+________________________________________________________________________________
+__________
+              sábado, 21 de octubre de 2017, Ciudad Universitaria, México, DF
+
+
+
+
+                                            2
+UNAM, Facultad de Ingeniería                                          21/10/2017 23:05:44
+      Autor: Santiago Cruz Carlos                              Titulo: Fuente de Alimentación Variable
+
+________________________________________________________________________________
+__________
+OBJETIVO:
+
+Elaboración de una fuente variable de 0 a 25 [V] en circuito impreso
+
+MATERIAL:
+
+       Clavija
+       1 transformador de 18 Vac a 1 [A]
+       4 diodos 1n4007
+       1 capacitor de 2200 [uF] a 35 V
+       1 Circuito integrado LM317
+       1 resistencia de 270 ohms
+       1 Potenciometro de 5 kohms
+       1 resistencia de 1 kohm
+
+
+
+
+                                              3
+UNAM, Facultad de Ingeniería                                            21/10/2017 23:05:44
+      Autor: Santiago Cruz Carlos                                Titulo: Fuente de Alimentación Variable
+
+________________________________________________________________________________
+__________
+DESARROLLO
+
+                         PARTES PRINCIPALES DE UNA FUENTE DE CD
+
+   1. ETAPA DE AISLACION Y REDUCCION DE TENSION
+
+Esta es la tapa inicial de una fuente de estas características, el aislamiento nos sirve como
+su nombre nos indica para aislar la tensión de 127 Vrms con nuestro circuito y no sufrir
+electrocución y reducir su tensión para los propósitos deseados, tales que, los circuitos en
+electrónica son tan bajos como 40 [V], dependiendo del área de electrónica.
+
+   2. ETAPA DE RECTIFICACION
+
+En esta etapa se transforma la tensión variable de 18 Vac a una señal pulsante de DC, en la
+cual estamos agregando frecuencias armónicas mayores a la de la de 60 [Hz], esto en el
+espacio de Fourier.
+
+   3. ETAPA DE FILTRADO
+
+La etapa de filtrado la realiza un capacitor en paralelo con la línea que transmite la tensión, el
+cual se comporta como un filtro paso bajas, este capacitor quita todas las altas frecuencias, y
+con esto nos quedamos con las componentes de baja frecuencia. Lo que nos interesa es
+quedarnos con la frecuencia cero del espectro, por lo que no quitará todas las componentes
+frecuenciales.
+
+
+
+
+   4. ETAPA DE REGULACION
+
+En esta etapa tenemos un circuito integrado lm317 el cual mediante circuiteria interna nos
+proporciona una tensión variada entre sus pines de programación, la cual solo se efectúa con
+un divisor de tensión entre sus terminales de ajuste y salida.
+
+
+
+
+                                                4
+UNAM, Facultad de Ingeniería                                         21/10/2017 23:05:44
+      Autor: Santiago Cruz Carlos                             Titulo: Fuente de Alimentación Variable
+
+________________________________________________________________________________
+__________
+
+
+
+
+La programación se realiza mediante la siguiente expresión:
+
+
+
+
+para nuestro caso tenemos:
+
+Vout = 1.25 (1+ 5k/270)+ 100[uA]*5k
+
+Vout = 24.398 + 0.5
+
+Vout = 24.898
+
+
+
+
+                                             5
+UNAM, Facultad de Ingeniería                                            21/10/2017 23:05:44
+      Autor: Santiago Cruz Carlos                                Titulo: Fuente de Alimentación Variable
+
+________________________________________________________________________________
+__________
+PROCESO PARA REVISAR EQUIPO
+
+MEDICION DE TENSION
+
+Debido a las caracteristicas de un multimetro, podemos lograr varias mediciones con este
+instrumento util para las mediciones electricas. La medicion de la tensión se hace mediante
+la conexión en paralelo de los bornes positivo y negativo dentro del circuito. La impedancia
+de entrada del voltímetro es alta, considerada infinito por lo que el circuito de medicion no
+consume energia por parte del circuito a medir.
+
+MEDICION DE CORRIENTE
+
+Para medir corriente el multimetro lo debemos de colocar en seria con la malla que queramos
+medir la corriente, la impedancia de entrada en este caso es cero, y el multimetro no
+consume energia de nuestro circuito
+
+
+PROCESO DE ELABORACION DEL CIRCUITO IMPRESO
+
+Para elaborar el circuito impreso requerimos de una botella con cloruro ferrico y una placa
+fenolica para circuito impreso.
+
+   1. El método consiste primero en limpiar bien la placa de las impuresas y la suciedad que
+      contiene en la superficie de cobre, esto con el fin de que sea mas efectiva la reacción
+      de la sustancia.
+   2. dibujar el circuito impreso sobre la placa mediante una tinta indeleble, tinta de aceite
+      comúnmente llamada para los marcadores comerciales, aquí el dibujo de las pistas de
+      nuestra placa debe ser acorde a la posición que queramos darle al circuito y el tamaño.
+      También podríamos utilizar algún sofware como EAGLE, PROTEL, dependiendo de la
+      precisión del circuito. El circuito debe dibujarse en espejo, esto con el propósito de que
+      quede en la parte donde no tiene cobre el circuito deseado.
+   3. verter en un recipiente el cloruro ferrico, insertar la placa, y esperar hasta que el
+      cloruro quite la parte de placa donde no se pinto el circuito, esperar un tiempo
+      moderado de 30 a 45 minutos, dependiendo del tamaño del circuito, para nuestro caso
+      es aproximadamente de 30 minutos.
+   4. revisar que haya hecho efecto el cloruro y retirar del recipiente, verter el cloruro en otro
+      recipiente para su nuevo uso (este puede usarse para otras placas)
+   5. mediante un poco de agua retirar el exceso de cloruro sobre la placa, y con un trapo
+      humedecido de tiner limpiar la superficie hasta que no haya quedado nada, las pistas
+      limpias de la tinta.
+
+
+
+                                                6
+UNAM, Facultad de Ingeniería                                             21/10/2017 23:05:44
+      Autor: Santiago Cruz Carlos                                 Titulo: Fuente de Alimentación Variable
+
+________________________________________________________________________________
+__________
+
+
+ESQUEMÁTICO DE LA FUENTE VARIADA
+
+
+
+
+CONCLUSIONES
+
+    se conocieron 4 aspectos importantes
+
+aislamiento
+rectificacion
+filtrado
+regulación
+
+    la diferencia entre corriente alterna y directa, la cual la corriente alterna tiene
+    variaciones positivas y negativas de tension y la directa solo tiene variaciones
+    positivas.
+    Aprendimos a utilizar el equipo de medición para la tensión y la corriente, para medir
+    tensión colocamos los bornes en paralelo al elemento a medir. Para medir corriente
+    colocamos el multimetro en serie, por donde pasa la corriente a medir.
+
+
+BIBLIOGRAFIA
+
+BIOGRAFIA:
+PRAT VIÑAS Lluis, Circuitos y dispositivos electrónicos Fundamentos de electrónica
+Alfaomega 6ª Ediciòn, México DF.
+
+Hoja de especificaciones del LM317
+
+
+
+                                                 7
+

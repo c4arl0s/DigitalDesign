@@ -1,0 +1,372 @@
+            UNIVERSIDAD NACIONAL
+            AUTONOMA DE MÉXICO
+
+
+
+
+     LABORATORIO DE DISEÑO DIGITAL
+        GPO. 12 Horario 9:30 a 11:30
+
+
+
+
+        REPORTE DE LA PRACTICA No. 3
+
+            ALGEBRA BOOLEANA Y
+        CIRCUITOS COMBINACIONALES
+
+
+
+
+Equipo 10: Integrante 1   Hernández Labra Virginia
+           Integrante 2   Santiago Cruz Carlos
+            Fecha de realización de la práctica: 30 /sep/05 y 7/oct/05
+                    Fecha de entrega del reporte: 14/oct/05
+               Práctica 3. Álgebra booleana y circuitos combinacionales
+
+OBJETIVO: Diseñar e implementar los circuitos combinacionales utilizando álgebra
+          booleana
+
+                                     INTRODUCCIÓN
+
+   1. Haga una pequeña descripción de los circuitos lógicos con salidas Totem-Pole,
+      Colector     Abierto y Tres
+      Estados, indicando ventajas y
+      desventajas de cada uno de
+      ellos.
+
+TOTEM POLE
+    Es llamada así porque el transistor
+Q4 está "encima" de Q3. La compuerta
+TTL poste totémico es igual a la
+compuerta de colector abierto, excepto
+por el transistor de salida Q4 y el diodo
+D1.
+
+      Al comparar este tipo de salida con
+la de colector abierto vemos que su
+tiempo de desactivación es más rápido,
+esto es debido a que se remplaza el arranque pasivo de la RL, por un arranque activo con
+el transistor Q4.
+
+   La salida Totem Pole consiste en dos transistores que se activan de forma excluyente.
+
+     La diferencia entre una compuerta de colector abierto y una de tipo totémico radica en
+el transistor Q4 y el diodo D1.
+
+    En las salidas totem pole si cualquier entrada es baja, Q3 se pone en corte por lo que
+se debe agregar una resistencia externa conectada a Vcc para que la salida "hale" hacia
+el nivel alto de voltaje, o la salida actuará como circuito abierto. Si todas las entradas son
+altas, ambos Q2 y Q3 conducen y se saturan, por lo que la salida será menor que 0.2V.
+Esto confirma las condiciones de operación NAND.
+
+Desventaja
+    No se pueden conectar dos o más salidas de este tipo a un mismo punto (bus)
+      porque la salida de la puerta está unida a masa o unida al + Vcc lo que impide
+      poner en paralelo las salidas de varias puertas.
+       La salida es baja cuando Q2 y Q3 se encuentran en saturación como en la
+       compuerta de colector abierto.
+       Al comparar este tipo de salida con la de colector abierto vemos que su tiempo de
+       desactivación es más rápido, esto es debido a que se remplaza el arranque pasivo
+       de la RL, por un arranque activo con el transistor Q4.
+       La conexión de lógica alambrada no se permite con circuitos de salida de poste
+       totémico. Cuando dos circuitos de este tipo se conectan juntos, con la salida de
+       una compuerta alta y la salida de la segunda baja, la cantidad excesiva de
+       corriente exigida puede producir suficiente calor para dañar los transistores del
+       circuito.
+
+
+
+COLECTOR ABIERTO
+
+    La resistencia externa RL debe conectarse
+para que la salida hale hacia el nivel alto,
+cuando el transistor Q3 está en corte.
+    Si cualquiera de los niveles lógicos de
+entrada es cero, la juntura base-emisor en Q1
+se polariza directamente.
+    Por consiguiente, la tensión en la base Q1
+es igual a:
+
+      0.2 V(Tensión de entrada) + 0.7(VbeQ1)
+                  = VbQ1 = 0.9 V
+
+    El transistor Q3 comienza a conducir cuando
+la suma de las caídas de tensión de VbcQ1,
+VbeQ2 y VbeQ3 sean superiores a 1.8 V. Como
+la tensión en VbQ1 es 0.9.V, el transistor Q3 queda en estado de corte. Por lo tanto, sí se
+conecta una resistencia al colector, la tensión de salida será un 1 lógico.
+
+   Si todos los niveles lógicos de entrada son 1, los transistores Q2 y Q3 se saturan
+debido a que la tensión en la base de Q1 es superior a la suma de las caídas de tensión
+VbcQ1, VbeQ2 y VbeQ3. Entonces el estado de salida es igual a cero lógico (0).
+
+Desventaja
+    Requiere una resistencia de polarización (Pull Up).
+    La necesidad de conformar lógica alambrada y de construir sistemas de base
+       común, provocó que los fabricantes no incluyeran la resistencia internamente. Por
+       lo que esta configuración es utilizada con fines muy especiales por ejemplo formar
+       un bus de datos común a todas las celdas (flip-flop) de la memoria.
+Ventaja
+    Permite conectar varias salidas juntas a una entrada.
+    Sirven de nexo con circuitos de tensiones de alimentación mayores que la de las
+       compuertas.
+    Posibilita las funciones OR y AND cableadas.
+       La salida en Colector abierto deja el colector del transistor conectado directamente
+       a la terminal de salida, por lo que será necesario conectar una resistencia externa
+       de colector (pull ­ up).
+       La necesidad de conformar lógica alambrada y de construir sistemas de base
+       común, provocó que los fabricantes no incluyeran la resistencia internamente. Por
+       lo que esta configuración es utilizada con fines muy especiales por ejemplo formar
+       un bus de datos común a todas las celdas (flip-flop) de la memoria.
+   
+
+TRES ESTADOS
+
+     Es una clase especial de compuerta tipo
+poste totémico que permite la conexión
+alambrada de las salidas con el propósito de
+formar un sistema de bus común. Cuando una
+compuerta TTL de salida tipo poste totémico
+tiene esta propiedad, se le llama compuerta de
+tres estados (o triestado). La figura muestra el
+diagrama del circuito inversor de tres estados
+donde se observa que los transistores Q6, Q7 y
+Q8, asociados con la entrada de control forman                                          un
+circuito similar a la compuerta de colector abierto.
+Por su parte los transistores Q1-Q5, asociados
+con la entrada de datos forman un circuito TTL                                          de
+poste totémico y los dos circuitos se conectan juntos por medio del diodo D1.
+     Los tres estados de salida son: alto, bajo y alta impedancia (alta Z). Cuando se
+selecciona el funcionamiento lógico normal, mediante la entrada de habilitación, el circuito
+triestado funciona de la misma forma que una puerta normal. Cuando el modo de
+funcionamiento es de alta impedancia, la salida se desconecta del resto del circuito.
+
+    Esta compuerta de tres estados tiene tres estados de salida: (1) un estado de bajo
+nivel cuando el transistor inferior del poste totémico está conduciendo y el superior está
+en corte; (2) un estado de nivel alto cuando el transistor superior del poste totémico está
+conduciendo y el inferior está en corte y (3) un tercer estado en que ambos transistores
+del poste totémico estén inactivos o en corte. Por lo tanto si la entrada C es baja, la
+compuerta se habilita y se comporta como un inversor del valor de entrada A.
+
+   Ventaja
+       La salida triestado combina las ventajas de los circuitos totem-pole y de
+          colector abierto.
+       Incorpora a la salida standard la capacidad de cortar ambos transistores.
+       Cuando la entrada C es alta, la salida Y presentará el tercer estado, es decir,
+          un circuito abierto o un estado de alta impedancia, el cual permite una
+          conexión alámbrica directa de muchas salidas a una línea común.
+       Si la línea de control esta en estado inactivo, la salida tiene nivel alto o bajo
+          según la entrada de excitación, si es activa, la salida pasa a un estado de alta
+          impedancia.
+       Se emplea en buses de entrada/salida donde hay muchas compuertas
+          conectadas (entradas y salidas), pero solo una puede ser salida activa y el
+          resto puede ser entrada o estar inhabilitada.
+A partir de la función H, dibuje un circuito digital para poder implementarla, marque
+en cada salida de las compuertas las operaciones lógicas que se esta efectuando con
+sus variables de entrada.
+
+
+
+
+                                                        H      A  B   C   A
+                                                                '        '    '
+
+
+
+
+Elabore la tabla combinacional para la función H.
+
+                                 A     B     C      H
+                                 0     0     0      1
+                                 0     0     1      1
+                                 0     1     0      1
+                                 0     1     1      1
+                                 1     0     0      0
+                                 1     0     1      0
+                                 1     1     0      0
+                                 1     1     1      0
+
+Implemente físicamente el circuito combinacional y pruebe su validez con la tabla que
+elaboro en el punto anterior. (se verifico y se anexa la firma)
+
+Haga la reducción de la función y comente de acuerdo al resultado y observaciones.
+
+ A  B   C  A   A  B  C   A  A  AB  AC  A  A( B  C )  A
+En la anterior reducción utilizamos primero el teorema de Morgan para la suma y después
+aplicamos el teorema fundamental de álgebra de boole que dice que a + ab = a, aunque
+se pudo observar de manera directa en la tabla combinacional que la salida era igual al
+inverso de A.
+2.    Determine la función D que se implementa con el siguiente circuito, analice
+cada una de las etapas del circuito estableciendo la función a cada salida de
+compuerta hasta obtener la total:
+
+
+
+
+D  ABC  BC  A BC  ABC
+
+                                                  A       B   C   D
+      Elabore la tabla combinacional para la                          función D
+                                                  0       0   0   0
+                                                  0       0   1   1
+                                                  0       1   0   1
+                                                  0       1   1   1
+                                                  1       0   0   0
+                                                  1       0   1   0
+                                                  1       1   0   1
+                                                  1       1   1   1
+      Enuncie, detalle y ejemplifique los                             teoremas,
+      postulados y axiomas del álgebra Booleana
+
+a 0a
+a 1  a
+a 1  1                           ab  ac  a (b  c)
+a 0  0                           ( a  b)(a  c )  a  bc
+aa a                             ab  ac  ac  ab  c
+a  a 1                           ( a  b)(a  c )  ac  ab
+ a  a                            (a  b  c)  a  b  c
+a (a  b)  a                      (a  b  c)  a  b  c
+a  ab  a
+                                 aa
+a (a  b)  ab
+a  ab  a  b
+
+
+Ejemplos
+    Mediante álgebra boleana, haga las simplificaciones necesarias para reducir la
+    expresión originada por este circuito.
+
+D  ABC  BC  ABC  ABC  BC  BC  ABC  B  B AC  B  AC
+
+
+    Implemente mediante compuertas la función reducida en el punto anterior y
+    verifique ese circuito con la tabla combinacional de la función D
+
+
+                                                             A     B    C    D
+Y observamos que es la                                       0     0    0    0
+misma tabla por lo que                                       0     0    1    1
+concluimos que nuestra                                       0     1    0    1
+función esta bien reducida.                                  0     1    1    1
+                                                             1     0    0    0
+                                                             1     0    1    0
+                                                             1     1    0    1
+                                                             1     1    1    1
+
+
+3. Diseñe un circuito lógico que resuelva esta situación:
+     Un dado de 6 caras tiene en su cara superior e inferior rotulado un 0 y las
+       demás caras están marcadas con un 1. Diseñe con circuito combinacional que
+       determine, si al lanzar el dado este cae en uno o cero
+(obviamente sin tomar como variable de entrada la cara superior del dado al caer y
+pensando que al caer no se pueden ver la cara inferior.
+4. Partiendo de la función F genere su tabla combinación
+F  X Y  Z  X Y  Z  X Y  Z  X Y  Z  X Y  Z
+
+
+     X     Y     Z     F
+     0     0     0     1
+     0     0     1     1
+     0     1     0     0
+     0     1     1     0
+     1     0     0     1
+     1     0     1     1
+     1     1     0     1
+     1     1     1     0
+
+
+
+
+    Utilizando álgebra boleana realice las reducciones pertinentes y obtenga la
+    suma mínima
+
+F  X  Y  Z  X  Y  Z  X  Y  Z  X  Y  Z  X  Y  Z  X Y ( Z  Z )  X Y ( Z  Z )  XY Z
+ X Y  X Y  XY Z  Y ( X  X )  XY Z  Y  YX Z  Y  X Z
+    Implemente mediante compuertas esta suma mínima y mediante la tabla
+    combinacional generada anteriormente compruebe la validez de esta función
+    con respecto a la original.
+
+                                                                           X   Y   Z    F
+                                                                           0   0   0    1
+                                                                           0   0   1    1
+                                                                           0   1   0    0
+                                                                           0   1   1    0
+                                                                           1   0   0    1
+                                                                           1   0   1    1
+                                                                           1   1   0    1
+                                                                           1   1   1    0
+
+Aquí comprobamos de que se trata la misma función porque la tabla de verdad es la
+misma verificándose que nuestra reducción es correcta.
+
+
+6. En un sistema de datos se envía información de dos diferentes puntos (bloque A y
+bloque B), como se muestra en la siguiente figura:         4
+                                                       A
+                                                                               4
+                                                                       C
+
+                                                       B       4                       Vcc
+                                                                                       GND
+Diseñe un circuito (bloque    C), donde si el interruptor está en la posición 1, los datos
+que pasan hacia la salida     son los del bloque A y cuando el interruptor está en la
+posición 2, los datos que     pasan son los del bloque B. Diseñar el bloque C usando
+circuitos 3 estados (el bus   debe ser mínimo de 4 líneas).
+
+
+
+
+    Armar el circuito anterior pero solo para líneas de dos datos y compruebe que
+    funciona correctamente, además de comentar detalladamente su
+    funcionamiento al realizar las pruebas.
+
+Lo que se implemento fue un bus común en la salida de las compuertas triestado para
+cada uno de los bits controlándolos a todos a través del enable. Se puede observar en el
+diseño que mientras la línea de la palabra A está habilitada los triestados de la palabra B
+se encuentran en alta impedancia por lo que se dice que el circuito está abierto y esto
+impide un corto. De forma inversa cuando se habilita B, los triestados de la palabra A
+están deshabilitados (circuito abierto) permitiendo que en la salida solo circule la palabra
+B.
+7. Diseñe mediante compuertas un sumador binario completo (Una celda).
+Lo primero que realizamos es generar su tabla de verdad
+
+Ai    Bi   Ci   Ci+1   Si
+0     0    0     0     0
+0     0    1     0     1                      00     01     11     10
+0     1    0     0     1                0      0      0      1      1
+0     1    1     1     0                1      0      1      1      1
+1     0    0     0     1
+1     0    1     1     0                Ci+1 = Ai Bi + Bi Ci + Ai Ci
+1     1    0     1     0
+1     1    1     1     1
+
+
+                                              00     01     11     10
+                                        0      0      1      0      1
+                                        1      1      0      1      0
+                                                 Si = Ai   Bi   Ci
+CONCLUSIONES                    HERNÁNDEZ LABRA VIRGINIA
+
+   Durante la práctica notamos la importancia de saber reducir las funciones ya
+   sea utilizando álgebra booleana o mapas de Karnaugh porque esto reduce el
+   número de compuertas o circuitos a necesitar y también reduce el cableado.
+
+   El álgebra de boole, los mapas de Karnaugh, el método de minimización de
+     Quine Macklosky son técnicas de minimización muy usadas en el diseño de
+     circuitos combinacionales (aquellos que utilizan compuertas lógicas para su
+     implementación y la salida está en función de las vars. De entrada y del arreglo
+     de las compuertas).
+
+   Es importante conocer las características de los circuitos que estamos
+   utilizando para evitas cortos circuitos o bien ahorrarnos buses comunes, para
+   ello fue de gran ayuda el uso de los circuitos tres estados que son muy
+   utilizados dentro de la arquitectura de una computadora. Los circuitos con
+   salida tótem pole no se pueden conectar en paralelo y aquellos circuitos que
+   trabajan con la salida de colector abierto necesitan una resistencia externa
+   para poder trabajar. Todos ellos son útiles de acuerdo con las necesidades del
+   diseñador.
+
+   Toda función minimizada es correcta si su tabla de verdad de ambas funciones
+   son la misma.
+

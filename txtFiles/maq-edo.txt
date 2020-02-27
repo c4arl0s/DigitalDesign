@@ -1,0 +1,151 @@
+MAQUINAS DE ESTADO ALGORÍTMICO (ASM)
+
+INFORMACIÓN BINARIA
+ALMACENADA EN UN
+SISTEMA DIGITAL:
+
+     DATOS
+     CONTROL DE LA INFORMACIÓN
+
+DATOS: elementos discreto de información (se procesan)
+CONTROL DE LA INFORMACIÓN: señales de mando (tarea de supervisión
+de las operaciones dadas).
+
+
+
+DISEÑO LÓGICO
+
+CIRCUITOS DIGITALES (procesan datos)
+CIRCUITOS DE CONTROL (supervisa operaciones y sus secuencias)
+
+¿Cómo se especifica las secuencias de pasos del proceso y las trayectorias
+de decisión ?
+
+Con un diagrama de flujo.
+
+
+Diagrama de máquina de estado algorítmico (ASM)
+
+Describe la secuencia de eventos, lo mismo que las relaciones de
+temporizado entre los estados de control secuencial y las eventos que
+ocurren cuando pasa de un estado al siguiente.
+Diagrama ASM
+Es un tipo especial de diagrama de flujo adecuado para describir las
+operaciones secuenciales en un sistema digital.
+Compuesto de tres elementos básicos:
+
+
+    Casilla de           casilla de decisión         casilla condicional
+     estado
+                        La condición de entrada
+En ella se escriben      que va a probarse está         Uso exclusivo del
+ operaciones de        esta escrita dentro de la        diagrama ASM. La
+    registro o          casilla . Una trayectoria    trayectoria de entrada
+nombres de señal         de salida se toma si la       debe llegar de una
+ de salida que el        condición es cierta y la   trayectoria de salida de
+ control general        otra cuando la condición    una casilla de decisión,
+ mientras se esta         es falsa. Cuando una      dentro hay operaciones
+  en este estado       condición de entrada está     de registro y de salida
+                           asignada a un valor        y se generan durante
+                             binario, las dos            un estado dado,
+                         trayectorias se indican         siempre que se
+                             por un 1 y un 0.        satisfaga la condición
+                                                            de entrada
+
+
+
+
+¿Qué significa
+esto ?
+     T3: nombre
+simbólico del estado
+001: código binario
+asignado
+R  0 : R se
+despeja a 0
+INICIO: puede
+significar señal de
+salida que inicia
+cierta operación
+              EJEMPLO DE UN DIAGRAMA ASM
+
+
+
+                      T1            001
+
+                            INICIO
+
+
+
+
+                        0               1
+                               E
+
+
+                                       R0
+
+
+
+                      T2               010
+
+                               FE
+
+
+¿ QUÉ HACE ?
+
+    se genera una señal de salida de START cuando se encuentra en el
+    estado T1.
+    mientras se encuentra en el estado T1, el control verifica el estado de
+    la entrada E.
+    si E=1, entonces R se despeja a O
+    en otra forma, R permanece sin embargo.
+    en cualquier caso, el estado siguiente es T2.
+
+    NOTACIÓN SIMBÓLICA               Descripción
+                                     Transferencia del contenido del
+                                     registro:
+AB                                   B al registro A
+R0                                    Despejar el registro R
+F1                                    Establecer el flip-flop en 1
+AA+1                                  Incrementar el registro A en 1
+AA­1                                  Disminuir el registro A en 1
+                                      Agregar el contenido del registro B
+AA+B
+                                      al registro A
+
+Cada bloque en el diagrama ASM describe el estado del sistema durante el
+intervalo de un pulso de reloj. Las operaciones dentro de las casillas que
+pertenecen a un T1 se ejecutan con un pulso común de reloj mientras se
+encuentra en ese estado. El mismo pulso de reloj también transfiere el
+sistema controlador a uno de los estados siguientes, T2, T3, T4, como
+dicten algunos valores condicionales.
+
+OTRO EJEMPLO
+                         T1                 001
+
+                            AA+1
+
+
+
+
+                            0               1
+                                  E
+
+
+                                            R0
+
+
+                        F
+
+
+              T2     001 T3           011       T4     100
+¿ QUÉ HACE EN EL TIEMPO ?
+
+
+
+
+ 1. el registro A se incrementa
+ 2. si E=1, el registro R se despeja.
+ 3. dependiendo de los valores de E y F, control se transfiere al estado
+    siguiente T2 o T3 o T4
+

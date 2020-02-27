@@ -1,0 +1,205 @@
+          UNIVERSIDAD NACIONAL
+           AUTÓNOMA DE MÉXICO
+
+
+             FACULTAD DE INGENIERIA
+
+
+                       Titulo: PRACTICA 6
+
+
+EQUIPO:
+                Orozco Gómez Sergio Armando
+                    Santiago Cruz Carlos
+
+
+
+          ASIGNATURA: Laboratorio de Diseño Digital
+
+                           GRUPO:
+UNAM, Facultad de Ingeniería                                               21/10/2017
+23:08:57
+Orozco Gómez Sergio Armando, Santiago Cruz Carlos           Titulo: Practica 6
+________________________________________________________________________________
+__________
+             sábado, 21 de octubre de 2017, Ciudad Universitaria, México, DF
+INTRODUCCION:
+
+
+CONTADORES
+
+En electrónica digital, un contador (counter en inglés) es un circuito secuencial construido a partir de
+biestables y puertas lógicas capaz de realizar el cómputo de los impulsos que recibe en la entrada
+destinada a tal efecto, almacenar datos o actuar como divisor de frecuencia. Habitualmente, el
+cómputo se realiza en un código binario, que con frecuencia será el binario natural o el BCD natural
+(contador de décadas).
+
+Existen diversos tipos de contadores:
+
+       Contadores de rizado.
+       Contadores paralelos.
+       Contadores de rizado mod-6.
+       Contador Johnson. Activa una sola salida entre varias. En respuesta al pulso de conteo, la
+       salida siguiente pasa a ser la activa. No se emplea un contador binario seguido de un
+       decodificador debido a que, al conmutar entre dos estados, podría producir pulsos espúrios en
+       otras salidas. El 4017 es un contador johnson de 10 estados.
+
+"Se utilizan para llevar el control del número de ocasiones en que se realiza una operación o se
+cumple una condición. Los incrementos son generalmente de uno en uno."
+
+
+
+
+DECODIFICADORES
+
+El decodificador es un circuito lógico que acepta un conjunto de entradas, representa un
+número binario y sólo activa la salida que corresponde a ese número de entrada.
+
+
+
+
+    2n códigos de
+Para un decodificador de 2x4
+    entrada                                     Solo una salida es alta
+                                                por cada código de
+                                                entrada
+                                                   2
+UNAM, Facultad de Ingeniería                                               21/10/2017
+23:08:57
+Orozco Gómez Sergio Armando, Santiago Cruz Carlos           Titulo: Practica 6
+________________________________________________________________________________
+__________
+
+
+
+
+                   Entradas                               Salidas
+              I1              I0        D3           D2             D1         D0
+              0                0         0           0              0          1
+              0                1         0           0              1          0
+              1                0         0           1              0          0
+              1                1         1           0              0          0
+
+En otras palabras, un circuito decodificador analiza sus entradas, determina que número binario
+esta presente allí y activa la salida que corresponde a ese número; el resto de las salidas
+permanecen inactivas.
+
+Aplicaciones del decodificador
+
+Los decodificadores se emplean cuando una salida o grupo de salidas se deban activar sólo
+cuando ocurra una combinación específica de niveles de entrada. Estos niveles de entrada a
+veces los proporcionan las salidas de un contador o de un registro. Cuando las entradas del
+decodificador provienen de un contador que se esta pulsando de manera continua, las salidas
+del decodificador se activan en forma secuencial y se pueden emplear como señales de
+sincronización para encender o apagar dispositivos en tiempos específicos.
+Simulación con circuit maker:
+
+
+
+
+                                              3
+UNAM, Facultad de Ingeniería                                               21/10/2017
+23:08:57
+Orozco Gómez Sergio Armando, Santiago Cruz Carlos           Titulo: Practica 6
+________________________________________________________________________________
+__________
+
+
+
+
+DISPLAY 7 SEGMENTOS
+
+El tipo más conocido de indicador alfanumérico es el display de siete segmentos, el cual comprende
+siete segmentos fotoeléctricos accesibles independientemente (tales como LEDs, elementos de
+cristal líquido, de descarga de gas, fluorescentes, etc.), dispuestos tal como se indica en la figura 1.
+Los segmentos son denominados convencionalmente de "a" a "g", siendo posible hacer que
+muestren cualquier número del 0 al 9 o un carácter alfabético de la A a la F (mezclando letras
+mayúsculas y minúsculas) activando estos segmentos en distintas combinaciones, tal como se
+muestra en la tabla de la figura.
+
+
+
+
+                                                   4
+UNAM, Facultad de Ingeniería                                               21/10/2017
+23:08:57
+Orozco Gómez Sergio Armando, Santiago Cruz Carlos           Titulo: Practica 6
+________________________________________________________________________________
+__________
+
+
+
+
+ OBJETIVO:
+
+ Mediante los elementos utilizados a lo largo del curso del laboratorio de Diseño Digital, tales
+ como los mencionados en la introducción, como son, compuertas, decodificadores,
+ fotosensores, contadores, flip flops realizaremos un dispositivo contador, el cual desplegaremos
+ su lectura a través de displays de 7 segmentos.
+
+ DESARROLLO:
+
+ Mediante el siguiente diagrama verifique cada etapa para la realización de una cuenta dada por
+ su profesor.
+
+ Construcción de un monoestable 1[Hz]
+   1. investigue los diferentes tipos de contadores y registros de corrimiento de la familia TTL y
+       sus características.
+   2. Diseñe un circuito que cuente de 0-9 utilizando un contador o registro de corrimiento de 4
+       bits. Al llegar a la cuenta máxima se deberá de reiniciar el conteo.
+   3. diseñe un circuito que cuente de 5-12 de forma cíclica, esto es que al llegar la cuenta de
+       12 con el siguiente pulso de reloj cargue un 5 y se reinicie la cuenta.
+   4. en un contador de 4 bits ¿cuántos y cuales son los divisores de frecuencia que este
+       posee implícitamente?
+   5. diseñe un circuito que realice la función mostrada en la figura.
+
+
+
+
+                                                 5
+UNAM, Facultad de Ingeniería                                               21/10/2017
+23:08:57
+Orozco Gómez Sergio Armando, Santiago Cruz Carlos           Titulo: Practica 6
+________________________________________________________________________________
+__________
+
+
+
+
+                                          6
+UNAM, Facultad de Ingeniería                                               21/10/2017
+23:08:57
+Orozco Gómez Sergio Armando, Santiago Cruz Carlos           Titulo: Practica 6
+________________________________________________________________________________
+__________
+
+
+
+ CONCLUSIONES:
+
+       Comprobamos la lógica de habilitación del contador 74ls161 la cual es llamada CLR, la
+       cual su diagrama esta simbolizado con un círculo en la entrada, mencionándonos que se
+       activa con un estado bajo (cero lógicos).
+       Contiene cuatro bits de inicialización
+       Contiene cuatro bits de salida
+       Contiene una señal de reloj
+       Estos contadores se aplican
+       Se conoció la forma de alambrado del display de 7 segmentos
+       Anado común se refiere a que los leds que contiene el display internamente, se ponen en
+       corto circuito y el cátodo va hacia a las salidas del decodificador de 7 segmentos
+       Cátodo común se refiere a que el cátodo de cada led interno se pone en corto circuito
+       hacia tierra y cada ánodo va conectado a cada salida del decodificador de 7 segmentos.
+
+
+
+
+ BIBLIOGRAFIA:
+
+ M MORRIS Mano, Diseño digital                    TK 7888.3
+                Prentice Hall,                    M 36318
+
+
+
+
+                                              7
+

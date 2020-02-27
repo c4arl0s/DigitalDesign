@@ -1,0 +1,298 @@
+UNAM, FACULTAD DE INGENIERÍA                                           Practica No2.
+
+Lab. Diseño Digital
+
+INTRODUCCION
+
+
+Familia CMOS
+
+Inversor
+
+Un dispositivo CMOS consiste en distintos dispositivos MOS interconectados para
+formar funciones lógicas. Los circuitos CMOS combinan transistores PMOS y
+NMOS. El conocimiento sobre el funcionamiento de los transistores MOS es
+importante para la comprensión de la lección. La convención de los transistores
+MOS de canal p y canal n es la siguiente:
+
+
+
+
+                         Símbolos para transistores MOS
+
+La operación del transistor MOS se basa en los siguientes preceptos básicos:
+
+    El transistor MOS de canal p conduce cuando el voltaje de puerta a fuente es
+    negativo.
+
+    El transistor MOS de canal n conduce cuando el voltaje de puerta a fuente es
+    positivo.
+
+    Cualquiera de los dos dispositivos entra a corte cuando el voltaje de puerta a
+    fuente es cero
+
+
+
+
+                                                                                 1
+UNAM, FACULTAD DE INGENIERÍA                                                     Practica No2.
+
+Lab. Diseño Digital
+
+
+
+
+                              Figura 9.3.2. Circuito lógico de un inversor
+
+
+
+
+                       Figura 9.3.3. Circuito lógico de la compuerta NAND CMOS
+
+
+                      TECNOLOGIA TTL USADO EN ESTA PRÁCTICA
+
+                                             NAND TTL
+
+
+
+
+                                                                                           2
+UNAM, FACULTAD DE INGENIERÍA   Practica No2.
+
+Lab. Diseño Digital
+
+
+
+
+                                         3
+UNAM, FACULTAD DE INGENIERÍA   Practica No2.
+
+Lab. Diseño Digital
+
+
+
+
+                                         4
+UNAM, FACULTAD DE INGENIERÍA                                         Practica No2.
+
+Lab. Diseño Digital
+
+
+
+
+¿Donde esta el arreglo tótem?
+
+
+
+
+¿Para qué se emplea, la configuración tipo tótem?
+La misma lógica se podría llevar a cabo eliminando Q1 y D1 y conectando la base
+de R1 al colector de Q2. Pero esto significaría que Q4 conduciría una corriente
+muy pesada en su estado de saturación (5V/130 ohms  40 [mA]) (recuerden que
+en el estado de saturación se tiene la corriente máxima en el colector y en el
+estado de corte se tiene la mínima corriente y el máximo voltaje en Vce). Con Q1
+
+
+
+                                                                               5
+UNAM, FACULTAD DE INGENIERÍA                                           Practica No2.
+
+Lab. Diseño Digital
+
+en el circuito no habrá corriente a través de R1 en el estado BAJO de salida. Esto
+es importante porque mantiene baja la disipación de potencia del circuito. Al
+comprobar con el multimetro la corriente verdaderamente es nula.
+
+Otra ventaja de esta configuración ocurre en el estado de salida de ALTO. En este
+caso Q1 está actuando como un seguidor emisor con su baja impedancia de salida
+asociada (comúnmente 10 ohms). Esta baja impedancia de salida proporciona un
+tiempo breve constante para cargar cualquier carga capacitiva en la salida. Esta
+acción (comúnmente llamada activa descendente) proporciona formas de onda
+con un tiempo de subida muy rápido en las salidas TTL.
+
+Una desventaja de la configuración de salida de tipo tótem ocurre durante la
+transición de BAJO a ALTO. Desafortunadamente, Q2 se apaga mas lentamente
+que el encendido de Q3, y por lo tanto existe un periodo de algunos
+nanosegundos durante el cual ambos transistores son conductores y se consume
+una corriente relativamente grande (de 30 a 40 [mA]) de la fuente de 5 [V]. Esto
+puede presentar problemas que analizaremos más adelante.
+
+PARTE 1
+
+Rellene las siguentes tabla:
+
+
+ 7408
+1 2 3
+0 0 0
+0 5 0
+5 0 0
+5 5 5
+
+
+ 7432
+1 2 3
+0 0 0
+0 5 0
+5 0 0
+5 5 5
+
+
+ 7404
+1 2
+0 5
+
+
+
+                                                                                 6
+UNAM, FACULTAD DE INGENIERÍA   Practica No2.
+
+Lab. Diseño Digital
+
+5 0
+
+
+ 7400
+1 2 3
+0 0 5
+0 5 5
+5 0 5
+5 5 0
+
+
+
+
+ 7486
+1 2 3
+0 0 0
+0 5 5
+5 0 5
+5 5 0
+
+
+ 74125
+1 2 3
+0 0 0
+0 5 5
+5 0 0
+5 5 0
+
+
+PARTE 2
+Arme el siguiente circuito:
+
+
+
+
+                                         7
+UNAM, FACULTAD DE INGENIERÍA                                           Practica No2.
+
+Lab. Diseño Digital
+
+
+
+
+      a) Rellene la siguiente tabla con entrada alta, y comience a disminuir la
+         tensiòn en la entrada, con el multimetro mida y observe la salida de la
+         compuerta ¿què nivel de tensiòn se espera que tenga para una entrada
+         alta? Siga disminuyendo y observe el comportamiento en puntos relevantes
+         para la observación. Entrada alta salida baja
+
+Vin    Vout
+0      4.37
+4.5    3.7
+4.0    3.31
+3.5    2.88
+3.0    2.33
+2.5    1.77
+2.0    1.27
+1.5    0.902
+1.0    0.4
+0.5    0.377
+
+Caso b) de nivel bajo a nivel alto
+
+Vin    Vout
+0.5    4.24
+1.0    3.84
+1.5    0.147
+2.0    0.147
+2.5    0.147
+3.0    0.147
+3.5    0.147
+4.0    0.147
+4.5    0.147
+5.0    0.147
+
+
+
+
+                                                                                 8
+UNAM, FACULTAD DE INGENIERÍA                                             Practica No2.
+
+Lab. Diseño Digital
+
+
+PARTE 3
+
+Arme el siguiente circuito:
+
+
+
+
+    a) mida la corriente que consume el circuito integrado
+    I)     cuando todas las salidas son bajas (ICCL) = 12.65 [mA]
+    II)    cuando todas las salidas son altas (ICCH ) = 12.56 [mA]
+    b) calcular la potencia que disipa la compuerta para los casos de los incisos
+        anteriores.
+    c) Cual serà la potencia que consuma cada una de las compuertas en estas
+        dos siituaciones.
+
+PARTE 4
+
+Arme el siguiente circuito:
+
+
+
+
+                                                                                    9
+UNAM, FACULTAD DE INGENIERÍA                                               Practica No2.
+
+Lab. Diseño Digital
+
+            a) en base a la señal y a la siguiente expresión calcule el tiempo de
+               retardo de prolongación tpd.
+
+Tpd= T/(2N)
+
+T= periodo de Vo en segundos
+N= numero de compuertas en cascada
+
+En base a sus observaciones responda lo siguiente:
+
+            b) ¿què sucede con el periodo, la frecuencia y el tiempo de retardo de
+               la señal de Vo, si el nùmero de compuertas impar, es disminuido?
+            c) ¿què sucederìa si el nùmero de compuertas en cascada fuese para ?
+
+
+
+
+                                                                                    10
+UNAM, FACULTAD DE INGENIERÍA                                           Practica No2.
+
+Lab. Diseño Digital
+
+Conclusiones Santiago Cruz Carlos:
+
+        Logramos comprobar la lógica que siguen algunas compuertas.
+        Se vieron los rangos de tension de entrada y rangos de tension de salida
+        para la tecnología TTL en esta practica.
+        Comprobamos los rangos de tension de entrada del fabricante asi como el
+        tiempo de retardo de propagaciòn.
+
+
+
+
+                                                                                11
+

@@ -1,0 +1,109 @@
+                       UNIVERSIDAD NACIONAL
+                        AUTÓNOMA DE MÉXICO
+
+
+
+                  FACULTAD DE INGENIERIA
+
+
+                         Titulo: BUS DE DATOS
+
+EQUIPO:
+                Orozco Gómez Sergio Armando
+                    Santiago Cruz Carlos
+
+
+            ASIGNATURA: Laboratorio de Diseño Digital
+
+                                  GRUPO:
+
+
+
+
+     sábado, 21 de octubre de 2017, Ciudad Universitaria, México, DF
+UNAM, Facultad de Ingeniería                                     21/10/2017 22:58:26
+Orozco Gómez Sergio Armando, Santiago Cruz Carlos           Titulo: Practica 6
+________________________________________________________________________________
+__________
+OBJETIVO:
+
+Desarrollar mediante el diagrama proporcionado un bus de datos, el cual nos servira para
+comprender el funcionamiento de un circuito integrado tri-estados y un flip-flop J-K.
+
+INTRODUCCION:
+
+FLIP-FLOP J-K SINCRONIZADO POR RELOJ (SYNCHRONIZED FOR CLOCK)
+
+Las entradas J y K controlan el estado del FF de la misma manera en que las entradas S y C
+controlan el FF S-C, excepto por una diferencia importante: la condición J=K=1 no es ambigua. Para
+la condición, 1,1, el FF siempre pasará a su estado opuesto cuando se lleve acabo la transición
+positiva de la señal de reloj. A esta operación se le llama modo de cambios de estados. En este
+modo, si J y K se dejan en ALTO, el FF cambiará estados (conmutará) para cada TTP de reloj.
+
+
+
+
+                   Entradas                                      Salidas
+      J                K              CLK                          Q
+      0                0                                    Q0 (sin cambio)
+      1                0                                            1
+      0                1                                            0
+      1                1                                   Q0_ (cambia estado)
+
+TRI-ESTADOS
+
+Es un dispositivo en el cual el circuito de salida puede ser desconectado del resto del circuito,
+poniendo la salida dentro de un estado de alta impedancia. La salida mantiene ninguna de las
+siguientes, es decir, ni un estado alto ni un estado bajo, apartándolo de una capacitancia parasita o
+corrientes de fuga, no afectan al circuito de salida. Tales circuitos de salida son comúnmente usados
+sobre pines de netrada de circuitos integrados, o cuando muchos dispositivos deben almacenarse en
+un bus común, tales como memorias o circuitos de entrada o salida.
+
+
+
+
+                                                 2
+UNAM, Facultad de Ingeniería                                     21/10/2017 22:58:27
+Orozco Gómez Sergio Armando, Santiago Cruz Carlos           Titulo: Practica 6
+________________________________________________________________________________
+__________
+DESARROLLO:
+
+Implemente una línea de transmisión (BUS) de tal forma que por la misma línea se introduzcan los
+datos, y se obtenga la respuesta.
+
+
+
+
+                                                3
+UNAM, Facultad de Ingeniería                                     21/10/2017 22:58:27
+Orozco Gómez Sergio Armando, Santiago Cruz Carlos           Titulo: Practica 6
+________________________________________________________________________________
+__________
+CONCLUSIONES:
+
+     Comprobamos que el circuito tri-estados tiene la posibilidad de conducir información cuando
+     su bit habilitación esta activado, proporcionando estados logicos altos y bajos, cuando la señal
+     esta deshabilitada, el tri-estados se pone en alta impedancia, con esto aisla el circuito de
+     salida de capacitancias parasitas y corrientes de fuga que pudiesen perjudicar la siguiente
+     etapa del circuito.
+     Comprobamos la tabla de verdad del Flip-flop J-K, el cual almacena un bit en su estructura.
+     Comprobamos que el funcionamiento del bus de datos es el siguiente, cuando existe señal en
+     la entrada y el bit de habilitación esta activado, permite ingresar información al FF J-K, con
+     esto mediante un inversor esta inhabilitando la salida de información del bus. Cuando los tri-
+     estados de la entrada están deshabilitados se permite la salida de información del bus, con
+     esto permitimos entrar y sacar información a través de los mismas líneas de comunicación.
+
+
+
+
+BIBLIOGRAFIA:
+
+ M MORRIS Mano, Diseño digital                       TK 7888.3
+                 Prentice Hall,                      M 36318
+
+
+
+
+                                                4
+

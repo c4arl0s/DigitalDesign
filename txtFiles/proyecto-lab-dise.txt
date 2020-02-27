@@ -1,0 +1,96 @@
+              UNIVERSIDAD NACIONAL
+                   AUTÓNOMA
+                   DE MÉXICO
+
+
+          FACULTAD DE INGENIERÍA
+
+
+
+          LABORATORIO DE
+          DISEÑO DIGITAL
+              Gpo. 12
+
+
+
+          "PROYECTO No. 1"
+             TAXIMETRO
+
+
+
+
+Brigada 10: Integrante 1   Hernández Labra Virginia
+            Integrante 2       Santiago Cruz Carlos
+
+
+
+      Fecha de realización del proyecto: 23/Nov/05
+       Fecha de entrega del reporte: 25/ Nov /05
+CIUDAD UNIVERSITARIA, MÉXICO, D. F. 2005
+                                    PROYECTO NO. 1 "TAXÍMETRO"
+
+        En un display se muestra la tarifa de cobro de un taxi, dicha tarifa esta definida de la
+        siguiente forma:
+
+            El banderazo inicial es de $0.0 y se incrementa cada 5 ciclos de reloj en $0.2, este
+            criterio se aplica hasta que el cobro llegue a un máximo de $5.0.
+            A partir de esa cantidad los incrementos serán de $0.5
+
+        Este taxímetro debe poder pausarse para establecer el cobro después del recorrido y debe
+        tener la opción de inicialización para establecer un nuevo cobro. El cobro máximo puede
+        ser de $10.0 o más pero llegando a ese valor debe detenerse el conteo.
+
+        SOLUCIÓN
+
+        Lo primero que realizamos fue un diseño con cajas negras, es decir con lo que suponemos
+        que va a llevar este taxímetro de acuerdo con nuestra experiencia, después veremos como
+        lo implementamos.
+
+
+
+
+Decodificador BCD A7      Decodificador BCD A7        Decodificador BCD A7       Decodificador BCD A7
+ segmentos 74LS47          segmentos 74LS47            segmentos 74LS47           segmentos 74LS47
+
+
+
+
+                             Contador de 0-1            Contador de 0-9          Contador      Contador
+                                                                                de 0,2,4,6,8    de 0,5
+
+
+
+
+        Y quisimos empezar con el diseño de los contadores puesto que al principio del problema
+        se especifica que cada cinco ciclos debe haber un cambio e hicimos el diagrama de tiempo
+        para visualizarlo
+
+
+
+
+        De los circuitos integrados TTL contadores más comunes están los siguientes:
+        7490A Décadas, divisor por 12 y contador binario BCD hasta 10 (de 0 á 9)
+        7492A Décadas, divisor por 12 y contador binario hasta 12 ( de 0 á 11)
+        7493A Décadas, divisor por 12 y contador binario hasta 16 ( de 0 á 15)
+74160A Contador sincrónico de 4 bits, completamente programable
+74190 Contador sincrónico Up/Down, BCD, programable ( de 0 á 9)
+74191 Contador binario de 4 bits, sincrónico, Up/Down
+74192 Contador sincrónico Up/Down BCD, programable (de 0 á 9)
+74193 Contador sincrónico de 4 bits binarios, programable, Up/Down
+
+Por lo que después de ver sus hojas de especificaciones nos decidimos por el primero el
+74LS90 para tratar de generar el divisor de 5
+
+
+
+
+Lo simulamos en Work Bench pero no funciono el primero y utilizamos el segundo el cual
+si funciono.
+
+
+
+
+Con el reloj que cambia cada cinco ciclos diseñamos el contador 0,2,4,6,8 y el 0,5
+http://kagiva.iespana.es/3ds/lecciones/lecc8.htm divisor de 5
+http://www.electronica2000.250x.com/digital/contdig.htm
+

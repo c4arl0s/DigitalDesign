@@ -1,0 +1,34 @@
+Flip flop
+
+El elemento más importante de la memoria es el flip flop, el
+cual esta constituido por un ensamble de compuertas lógicas.
+Aunque una compuerta lógica no puede por si misma no tiene
+capacidad para almacenar, se pueden conectar varias a la vez
+de tal manera que permitan el almacenamiento para la
+información.
+
+NAND LATCH
+
+El circuito FF más básico se puede construir a base de dos
+compuertas NAND o dos compuertas NOR.
+
+
+
+
+SET=CLEAR=1. Esta condición es el estado normal de
+reposo y no tiene efecto en el estado de salida. Las salidas Q
+y Q_ permanecerán en el estado que tenían antes de esta
+condición de entrada.
+SET=0, CLEAR=1. esto siempre, causará que la salida pase
+a alto Q=1, donde permanecerá incluso después de que SET
+retorne a ALTO. A esto se le llama establecimiento del
+latch.
+SET=1, CLEAR=0. Esto siempre producirá el estado Q=0, en
+el cual la salida permanecerá incluso después que BORRAR
+retorne a ALTO. A esto se le llama establecimiento o
+reestablecimiento del latch.
+SET=CLEAR=0. Esta condición intenta establecer y borrar el
+latch al mismo tiempo y puede producir resultados ambiguos.
+No se debe emplear.
+NOR LATCH
+

@@ -1,0 +1,248 @@
+UNAM, FACULTAD DE INGENIERÍA                                                   SANTIAGO CRUZ CARLOS
+APUNTES DISEÑO DIGITAL                                                        21/08/2006 16:55 O8/P8
+
+SISTEMA DE NUMERACIÓN
+
+Consiste en un conjunto ordenado de símbolos llamados dígitos. En este conjunto se
+definen reglas para efectuar operaciones matemáticas, la base de un sistema indica la
+cantidad de dígitos incluidos en dicho conjunto ordenado. En un sistema de numeración
+se pueden representar números que estén integrados por una parte entera y una
+fraccional.
+
+                                                         n 1
+                                                         i  m
+                                                                ai r i
+
+
+
+r                base del sistema numérico
+ai               i-esimo digito
+m                cantidad de dígitos parte fraccionaria
+n                cantidad de dígitos parte entera
+
+
+                   a m r  m  a m1r  m1      a1r 1  a0 r 0  a1r1      an 2 r n 2  an 1r n 1
+su representación es de la siguiente forma
+
+a       a
+     n 1 n  2      a1a0 .a1a2    am1am r  m       r
+
+
+para r  10
+
+ai   0,1,2,3....r  1
+
+para r  10
+
+ai   0,1,2,3....9, A, B, C , D, E , F ,..., r  1
+
+CONVERSIONES
+
+Dado un numero de base 10 convertirlo a base r
+
+"divisiones sucesivas"
+
+(238.12)10
+
+
+Primer residuo es el menos significativo
+
+    4 7
+5 2 3 8
+    3 8
+
+                             1 de 5 Introducción a los mP y mC (parte 1)
+UNAM, FACULTAD DE INGENIERÍA                                                           SANTIAGO CRUZ CARLOS
+APUNTES DISEÑO DIGITAL                                                                21/08/2006 16:55 O8/P8
+
+              3
+
+    9
+5 4 7
+    2
+
+
+          1
+5         9
+          4
+
+
+Ultimo digito es el mas significativo
+
+          0
+5         1
+          1
+
+
+
+(0.12)10  0.12 x 5 0.6
+          0.6 x 5 3.0
+
+
+Obteniendo los enteros de los resultados de las multiplicaciones
+
+
+                                                         238.1210        (1423.03)5
+
+DADO UN NUMERO EN BASER R CONVERTIRLO A LA BASE 10
+
+(1423.03) 5               10
+      4 1          4 2             4 3          4 4          1          2
+1 5          4 5          2 5             3 5          0 5        3 5       
+      3       2                1         0      1            2
+1 5  4 5  2 5  3 5  0 5                                3 5       
+
+
+
+                         1  1 
+1125  4 25  2 5  31  0   3  
+                          5   25 
+                     3 
+125  100  10  3  0    
+                     25 
+ 238.12
+
+(1423.03) 5   238.12  10
+
+
+
+                                    2 de 5 Introducción a los mP y mC (parte 1)
+UNAM, FACULTAD DE INGENIERÍA                                        SANTIAGO CRUZ CARLOS
+APUNTES DISEÑO DIGITAL                                             21/08/2006 16:55 O8/P8
+
+SISTEMA DE NUMERACION BINARIO
+
+R=2
+Ai={0,1}
+
+
+0/1 0/1 0/1 0/1 0/1
+ 24  23  22  21  20
+ 16  8   4   2   1
+
+   24 23 22 21 20
+   16 8 4 2 1
+2        0 1 0
+ 7       1 1 1
+15    1 1 1 1
+
+SISTEMA DE NUMERACION OCTAL
+
+R=8
+Ai={0,1,2...7}
+
+
+0-7  0-7 0-7 0-7 0-7
+ 8 4
+      83  82 81 80
+4096 512 64   8   1
+
+    84   83 82 81 80
+   4096 512 64 8 1
+2                 2
+ 7                7
+15             1 7
+12             1 4
+
+Checa colocamos una unidad (1) donde queremos que represente un 8 al hacer la
+conversión.
+
+SISTEMA DE NUMERACION HEXADECIMAL
+
+R=8
+Ai={0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F}
+
+                    24
+0-F   0-F  0-F 0-F 0-F
+ 164   163 162 161 160
+65536 4096 256 16   1
+
+     164    163   162 161 160
+
+                     3 de 5 Introducción a los mP y mC (parte 1)
+UNAM, FACULTAD DE INGENIERÍA                                                      SANTIAGO CRUZ CARLOS
+APUNTES DISEÑO DIGITAL                                                           21/08/2006 16:55 O8/P8
+
+         4096 512             64   16    1
+2                                        2
+ 7                                       7
+15                                       F
+12                                       C
+20                                  1    4
+
+Checa colocamos una unidad (1) donde queremos que represente un 8 al hacer la
+conversión.
+
+OPERACIONES ARITMETICAS
+
+SUMA y MULTIPLICACION
+
++ 0 1
+0 0 1
+1 1 10
+
+X 0           1
+0 0           0
+1 0           1
+
+
+
+     1
+    01 1 01 1 01 1 0 1
++   1 1 0 1 0 1 1 0
+  1 0 0 1 0 1 0 1 1
+
+
+
+
+RESTA
+                              2
+           5             1    0 1
+         - 2            0+1   1 0
+           3             0    1 1
+
+
+         1        2
+                   0    2
+                         0 1       2
+                                    0 1      2
+                                             0 1 1
+-        +1
+                  1+1    1 0+1      1 0+1    1 1 0
+         0         1     1 0        1 0      1 0 1
+
+
+MULTIPLICACION
+
+                                   4 de 5 Introducción a los mP y mC (parte 1)
+UNAM, FACULTAD DE INGENIERÍA                                        SANTIAGO CRUZ CARLOS
+APUNTES DISEÑO DIGITAL                                             21/08/2006 16:55 O8/P8
+
+
+              1 0    1             5
+        x       1    0         X   2
+              0 0    0
+            1 0 1
+            1 0 1    0             10
+
+DIVISION
+
+
+                 1 0      1 0 1
+                 2
+1 0 1 1 1          0 1    0 0 1
+      1 0+1      1
+      0 0        1 1      0
+                 1 0+1    1
+                 0 0      1 0 1
+                          1 0 1
+                          0 0 0
+
+
+Cuantas veces cabe el 5 en el 6, ps 1
+
+
+
+
+                     5 de 5 Introducción a los mP y mC (parte 1)
+

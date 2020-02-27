@@ -1,0 +1,330 @@
+       Familias Lógicas
+       An Introduction to Digital Logic Familities
+       In the beginning (almost) there was diode logic (DL).                   reference
+
+
+
+       See a beautiful little DL Demonstrator (local copy) from HyperPhysics
+        Level-Shifted Diode Logic Two-Input NAND Gate
+
+
+
+                With either input at 0V,
+                Vx=0.7 V, DL is just cut off,
+                and VOUT = 0 V.
+
+
+                With both inputs at 1 V,
+                VX=1.7 V and VOUT=1 V.
+
+
+
+
+       Then there was resistor-transistor logic (RTL)....
+Resistor-Transistor Logia
+Two-Input NOR Gate                                    Two-Input NAND Gate
+
+
+        and diode-transistor logic (DTL).
+        A Diode-Transistor Logic (DTL) Two-Input NAND Gate
+                                                                                  If all inputs
+                                                                                  are high, Vx
+                                                                                  = 2.2 V and
+
+                                                                                  the
+                                                                                  transistor is
+                                                                                  saturated.
+
+                                                                                  If any input
+                                                                                  goes     low
+                                                                                  (0.2 V), Vx
+                                                                                  = 0.9 V
+                                                                                  and       the
+                                                                                  transistor
+                                                                                  cuts off.
+
+
+                                                                                  The added
+                                                                                  resistor R2
+                                                                                  provides a
+                                                                                  discharge
+                                                                                  path      for
+                                                                                  stored base
+                                                                                  charge in
+                                                                                  the BJT, to
+                                                                                  provide a
+                                                                                  reasonable
+                                                                                  L->H
+                                                                                  transition
+                                                                                  time.
+                     930 Series Diode-Transistor Logic Three-Input NAND Gate
+Which begat transistor-transistor logic (TTL).
+       Basic Transistor-Transistor Logic (TTL) Inverter
+
+
+
+
+Basic Multi-emitter TTL Three-Input NAND Gate
+                                                  ALL INPUTS HIGH.
+                                                ï Q1 is reverse active.
+                                                ï QO is saturated.
+                                                ï VOL = VCE(sat)
+                                                  ANY INPUT LOW.
+                                                ï Q1 is saturated.
+                                                ï QO is cut off.
+                                                ï VOH = VCC
+
+
+
+
+TTL         Switching   or     Transistion      Times
+(see illustration)
+
+
+
+
+       Low       to     High        High       to       Low
+       Transistion                  Transistion
+       The time required to         The             depletion
+       discharge    the   Q1        capacitance of the Q1 EB
+          depletion layers is <<         junction must discharge;
+          1ns.
+
+          The time required to           Base charge must be
+          extract the Q2 base            removed   from   the
+          charge is also << 1ns:         saturated    Q2
+              o Q1        becomes
+                 forward active;         Ditto    for       QO
+              o IBR       becomes
+                 large for Q2
+                                         The capactive load must
+          Removal of base charge         be charged to VCC.
+          from QO is similar to the
+          DTL case. With R2 = 1
+          k, ts = 10ns (typical
+          values for 7400 series
+          TTL).
+
+
+
+
+Low-Power Schottky TTL (74LS Series)
+
+                                                           Why go
+                                                        back to DTL?
+                                                            The
+                                                               Schott
+                                                               ky
+                                                               diodes
+                                                               can be
+                                                               made
+                                                               smalle
+                                                               r than
+                                                               Q1,
+                                                               with
+                                                               lower
+                                                               parasit
+                                                               ic
+                                                               capaci
+                                                               tances,
+                                                               with
+      Click on image to enlarge                                post
+                                                               1975
+                                                               techno
+                                                               logy
+                                                               (6mm
+                                                                      featur
+                                                                      es).
+
+                                                                      QS can
+                                                                      not
+                                                                      satura
+                                                                      te, so
+                                                                      it    is
+                                                                      not
+                                                                      necces
+                                                                      sary to
+                                                                      remov
+                                                                      e    its
+                                                                      base
+                                                                      charge
+                                                                      with a
+                                                                      BJT.
+
+
+
+
+                                                                      (source)
+
+
+
+
+CMOS and NMOS Logic
+See our MOS logic page
+
+References
+See     notes    from    Professor     John     Emerson    Ayers      course     on
+Digital Integrated Circuits particularly the notes on DTL/TTL (local copy).
+
+See also Inside Logic Gates
+
+
+This page was prepared and is maintained by R. Victor Jones
+Comments                to:             mailto:%20jones.deas.harvard.edu.
+Last updated December 11, 2001
+   Home                                                                 Tue, 06-01-
+                        www.play-hookey.com                             2004
+Digital | Logic Families | Digital Experiments | Analog |
+Analog Experiments | DC Electronic Theory | Optics | Computers |
+Semiconductors | Test HTML
+
+Select the Logic Family you wish to examine:
+
+
+  [Diode Logic (DL)] [Resistor-Transistor Logic (RTL)] [Diode-Transistor Logic
+  (DTL)]
+  [Transistor-Transistor Logic (TTL)] [Emitter-Coupled Logic (ECL)] [CMOS]
+
+
+Inside Logic Gates
+I have received a number of requests, asking just what goes on inside logic gates to actually
+perform logic functions. So, by popular demand, here are the internal schematics of various
+gates, as implemented by several different logic families.
+
+I won't cover the internal operation of individual semiconductor devices in these pages,
+except to state the basic behavior of a given device under specific conditions. More detailed
+coverage of semiconductor physics and internal behavior is a job for another set of pages,
+which will come later.
+
+
+
+There are several different families of logic gates. Each family has its capabilities and
+limitations, its advantages and disadvantages. The following list describes the main logic
+families and their characteristics. You can follow the links to see the circuit construction of
+gates of each family.
+
+Diode Logic (DL)
+
+          Diode logic gates use diodes to perform AND and OR logic functions. Diodes
+          have the property of easily passing an electrical current in one direction, but not
+          the other. Thus, diodes can act as a logical switch.
+
+          Diode logic gates are very simple and inexpensive, and can be used effectively in
+          specific situations. However, they cannot be used extensively, as they tend to
+          degrade digital signals rapidly. In addition, they cannot perform a NOT function,
+          so their usefulness is quite limited.
+Resistor-Transistor Logic (RTL)
+
+         Resistor-transistor logic gates use Transistors to combine multiple input signals,
+         which also amplify and invert the resulting combined signal. Often an additional
+         transistor is included to re-invert the output signal. This combination provides
+         clean output signals and either inversion or non-inversion as needed.
+
+         RTL gates are almost as simple as DL gates, and remain inexpensive. They also
+         are handy because both normal and inverted signals are often available. However,
+         they do draw a significant amount of current from the power supply for each gate.
+         Another limitation is that RTL gates cannot switch at the high speeds used by
+         today's computers, although they are still useful in slower applications.
+
+         Although they are not designed for linear operation, RTL integrated circuits are
+         sometimes used as inexpensive small-signal amplifiers, or as interface devices
+         between linear and digital circuits.
+
+
+
+
+Diode-Transistor Logic (DTL)
+
+         By letting diodes perform the logical AND or OR function and then amplifying
+         the result with a transistor, we can avoid some of the limitations of RTL. DTL
+         takes diode logic gates and adds a transistor to the output, in order to provide
+         logic inversion and to restore the signal to full logic levels.
+
+
+
+
+Transistor-Transistor Logic (TTL)
+
+         The physical construction of integrated circuits made it more effective to replace
+         all the input diodes in a DTL gate with a transistor, built with multiple emitters.
+         The result is transistor-transistor logic, which became the standard logic circuit in
+         most applications for a number of years.
+
+         As the state of the art improved, TTL integrated circuits were adapted slightly to
+         handle a wider range of requirements, but their basic functions remained the
+         same. These devices comprise the 7400 family of digital ICs.
+Emitter-Coupled Logic (ECL)
+
+          Also known as Current Mode Logic (CML), ECL gates are specifically designed
+          to operate at extremely high speeds, by avoiding the "lag" inherent when
+          transistors are allowed to become saturated. Because of this, however, these gates
+          demand substantial amounts of electrical current to operate correctly.
+
+
+
+
+CMOS Logic
+
+          One factor is common to all of the logic families we have listed above: they use
+          significant amounts of electrical power. Many applications, especially portable,
+          battery-powered ones, require that the use of power be absolutely minimized. To
+          accomplish this, the CMOS (Complementary Metal-Oxide-Semiconductor) logic
+          family was developed. This family uses enhancement-mode MOSFETs as its
+          transistors, and is so designed that it requires almost no current to operate.
+
+          CMOS gates are, however, severely limited in their speed of operation.
+          Nevertheless, they are highly useful and effective in a wide range of battery-
+          powered applications.
+
+Most logic families share a common characteristic: their inputs require a certain amount of
+current in order to operate correctly. CMOS gates work a bit differently, but still represent a
+capacitance that must be charged or discharged when the input changes state. The current
+required to drive any input must come from the output supplying the logic signal.
+Therefore, we need to know how much current an input requires, and how much current an
+output can reliably supply, in order to determine how many inputs may be connected to a
+single output.
+
+La mayoría de familias almacenan una característica común: sus entrada
+requieren de una cierta cantidad de corriente para operar correctamente.
+CMOS trabajan un poco diferente, pero aún presentan una capacitancia que
+debe ser cargada o descargada cuando cambian de estado las entradas. La
+corriente requerida para manejar alguna entrada debe llegar de la salida
+aplicada suministrada de la señal logica. Por lo tanto necesitamos conocer
+cuanta corriente requiere en la entrada y cuanta corriente puede suministrar en
+la salida de tal manera saber cuantas entradas se pueden conectar para una
+salida simple.
+
+However, making such calculations can be tedious, and can bog down logic circuit design.
+Therefore, we use a different technique. Rather than working constantly with actual
+currents, we determine the amount of current required to drive one standard input, and
+designate that as a standard load on any output. Now we can define the number of standard
+loads a given output can drive, and identify it that way. Unfortunately, some inputs for
+specialized circuits require more than the usual input current, and some gates, known as
+buffers, are deliberately designed to be able to drive more inputs than usual. For an easy
+way to define input current requirements and output drive capabilities, we define two new
+terms:
+
+Sin embargo, haciendo cálculos puede ser tedioso. Por lo tanto,
+nosotros usamos una técnica diferente.
+
+
+
+Fan-in
+          The number of standard loads drawn by an input to ensure reliable operation.
+          Most inputs have a fan-in of 1.
+
+          El número de cargas dibujadas en una entrada asegura punto de
+          operación. La mayoría de entradas es de fan-in de 1
+
+Fan-out
+          The number of standard loads that can be reliably driven by an output, without
+          causing the output voltage to shift out of its legal range of values
+
+          El numero de cargas que pueden ser manejadas de forma buena
+          por una entrada, sin causar que la tensión de salida cambie de su
+          rango legal de valores
+
+Remember, fan-in and fan-out apply directly only within a given logic family. If for any
+reason you need to interface between two different logic families, be careful to note and
+meet the drive requirements and limitations of both families, within the interface circuitry.
+
